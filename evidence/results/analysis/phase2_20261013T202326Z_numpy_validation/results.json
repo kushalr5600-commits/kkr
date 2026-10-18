@@ -1,0 +1,992 @@
+{
+  "architecture": "AMD64",
+  "budget_curve": [
+    {
+      "budget": 0.005,
+      "failure_recall": 0.004803921568627451,
+      "failures_found": 0.49,
+      "false_negatives": 101.51,
+      "false_positives": 4.51,
+      "k": 5,
+      "policy": "random",
+      "precision": 0.098,
+      "recall_ci95": [
+        0.0,
+        0.03629574760774591
+      ],
+      "sim_runtime_ms_total": 0.6347095005003212,
+      "simulations": 5
+    },
+    {
+      "budget": 0.005,
+      "failure_recall": 0.00980392156862745,
+      "failures_found": 1.0,
+      "false_negatives": 101.0,
+      "false_positives": 4.0,
+      "k": 5,
+      "policy": "amount_only",
+      "precision": 0.2,
+      "recall_ci95": [
+        0.0017326897927338993,
+        0.053459219626624845
+      ],
+      "sim_runtime_ms_total": 0.6347095005003212,
+      "simulations": 5
+    },
+    {
+      "budget": 0.005,
+      "failure_recall": 0.0196078431372549,
+      "failures_found": 2.0,
+      "false_negatives": 100.0,
+      "false_positives": 3.0,
+      "k": 5,
+      "policy": "anomaly_only",
+      "precision": 0.4,
+      "recall_ci95": [
+        0.0053936391253454315,
+        0.06869443210562613
+      ],
+      "sim_runtime_ms_total": 0.6347095005003212,
+      "simulations": 5
+    },
+    {
+      "budget": 0.005,
+      "failure_recall": 0.0196078431372549,
+      "failures_found": 2.0,
+      "false_negatives": 100.0,
+      "false_positives": 3.0,
+      "k": 5,
+      "policy": "BLACKBOX_frozen_gate",
+      "precision": 0.4,
+      "recall_ci95": [
+        0.0053936391253454315,
+        0.06869443210562613
+      ],
+      "sim_runtime_ms_total": 0.6347095005003212,
+      "simulations": 5
+    },
+    {
+      "budget": 0.005,
+      "failure_recall": 0.049019607843137254,
+      "failures_found": 5.0,
+      "false_negatives": 97.0,
+      "false_positives": 0.0,
+      "k": 5,
+      "policy": "interaction_aware",
+      "precision": 1.0,
+      "recall_ci95": [
+        0.021117285132196968,
+        0.1096592715336131
+      ],
+      "sim_runtime_ms_total": 0.6347095005003212,
+      "simulations": 5
+    },
+    {
+      "budget": 0.01,
+      "failure_recall": 0.010392156862745099,
+      "failures_found": 1.06,
+      "false_negatives": 100.94,
+      "false_positives": 8.94,
+      "k": 10,
+      "policy": "random",
+      "precision": 0.10600000000000001,
+      "recall_ci95": [
+        0.0017326897927338993,
+        0.053459219626624845
+      ],
+      "sim_runtime_ms_total": 1.2694190010006423,
+      "simulations": 10
+    },
+    {
+      "budget": 0.01,
+      "failure_recall": 0.0196078431372549,
+      "failures_found": 2.0,
+      "false_negatives": 100.0,
+      "false_positives": 8.0,
+      "k": 10,
+      "policy": "amount_only",
+      "precision": 0.2,
+      "recall_ci95": [
+        0.0053936391253454315,
+        0.06869443210562613
+      ],
+      "sim_runtime_ms_total": 1.2694190010006423,
+      "simulations": 10
+    },
+    {
+      "budget": 0.01,
+      "failure_recall": 0.058823529411764705,
+      "failures_found": 6.0,
+      "false_negatives": 96.0,
+      "false_positives": 4.0,
+      "k": 10,
+      "policy": "anomaly_only",
+      "precision": 0.6,
+      "recall_ci95": [
+        0.02723526813965307,
+        0.1224374503377698
+      ],
+      "sim_runtime_ms_total": 1.2694190010006423,
+      "simulations": 10
+    },
+    {
+      "budget": 0.01,
+      "failure_recall": 0.0392156862745098,
+      "failures_found": 4.0,
+      "false_negatives": 98.0,
+      "false_positives": 6.0,
+      "k": 10,
+      "policy": "BLACKBOX_frozen_gate",
+      "precision": 0.4,
+      "recall_ci95": [
+        0.015353823095438892,
+        0.09652657175875834
+      ],
+      "sim_runtime_ms_total": 1.2694190010006423,
+      "simulations": 10
+    },
+    {
+      "budget": 0.01,
+      "failure_recall": 0.09803921568627451,
+      "failures_found": 10.0,
+      "false_negatives": 92.0,
+      "false_positives": 0.0,
+      "k": 10,
+      "policy": "interaction_aware",
+      "precision": 1.0,
+      "recall_ci95": [
+        0.05412743684309119,
+        0.171129928880783
+      ],
+      "sim_runtime_ms_total": 1.2694190010006423,
+      "simulations": 10
+    },
+    {
+      "budget": 0.02,
+      "failure_recall": 0.018970588235294118,
+      "failures_found": 1.935,
+      "false_negatives": 100.065,
+      "false_positives": 18.065,
+      "k": 20,
+      "policy": "random",
+      "precision": 0.09675,
+      "recall_ci95": [
+        0.0053936391253454315,
+        0.06869443210562613
+      ],
+      "sim_runtime_ms_total": 2.5388380020012846,
+      "simulations": 20
+    },
+    {
+      "budget": 0.02,
+      "failure_recall": 0.0196078431372549,
+      "failures_found": 2.0,
+      "false_negatives": 100.0,
+      "false_positives": 18.0,
+      "k": 20,
+      "policy": "amount_only",
+      "precision": 0.1,
+      "recall_ci95": [
+        0.0053936391253454315,
+        0.06869443210562613
+      ],
+      "sim_runtime_ms_total": 2.5388380020012846,
+      "simulations": 20
+    },
+    {
+      "budget": 0.02,
+      "failure_recall": 0.14705882352941177,
+      "failures_found": 15.0,
+      "false_negatives": 87.0,
+      "false_positives": 5.0,
+      "k": 20,
+      "policy": "anomaly_only",
+      "precision": 0.75,
+      "recall_ci95": [
+        0.09119034130498939,
+        0.2285478334769489
+      ],
+      "sim_runtime_ms_total": 2.5388380020012846,
+      "simulations": 20
+    },
+    {
+      "budget": 0.02,
+      "failure_recall": 0.0784313725490196,
+      "failures_found": 8.0,
+      "false_negatives": 94.0,
+      "false_positives": 12.0,
+      "k": 20,
+      "policy": "BLACKBOX_frozen_gate",
+      "precision": 0.4,
+      "recall_ci95": [
+        0.04027620360068293,
+        0.1471888384999656
+      ],
+      "sim_runtime_ms_total": 2.5388380020012846,
+      "simulations": 20
+    },
+    {
+      "budget": 0.02,
+      "failure_recall": 0.18627450980392157,
+      "failures_found": 19.0,
+      "false_negatives": 83.0,
+      "false_positives": 1.0,
+      "k": 20,
+      "policy": "interaction_aware",
+      "precision": 0.95,
+      "recall_ci95": [
+        0.12261984082072329,
+        0.2727029812076664
+      ],
+      "sim_runtime_ms_total": 2.5388380020012846,
+      "simulations": 20
+    },
+    {
+      "budget": 0.05,
+      "failure_recall": 0.04897058823529412,
+      "failures_found": 4.995,
+      "false_negatives": 97.005,
+      "false_positives": 45.005,
+      "k": 50,
+      "policy": "random",
+      "precision": 0.0999,
+      "recall_ci95": [
+        0.021117285132196968,
+        0.1096592715336131
+      ],
+      "sim_runtime_ms_total": 6.3470950050032116,
+      "simulations": 50
+    },
+    {
+      "budget": 0.05,
+      "failure_recall": 0.0196078431372549,
+      "failures_found": 2.0,
+      "false_negatives": 100.0,
+      "false_positives": 48.0,
+      "k": 50,
+      "policy": "amount_only",
+      "precision": 0.04,
+      "recall_ci95": [
+        0.0053936391253454315,
+        0.06869443210562613
+      ],
+      "sim_runtime_ms_total": 6.3470950050032116,
+      "simulations": 50
+    },
+    {
+      "budget": 0.05,
+      "failure_recall": 0.3235294117647059,
+      "failures_found": 33.0,
+      "false_negatives": 69.0,
+      "false_positives": 17.0,
+      "k": 50,
+      "policy": "anomaly_only",
+      "precision": 0.66,
+      "recall_ci95": [
+        0.2405777016662478,
+        0.41929138572472147
+      ],
+      "sim_runtime_ms_total": 6.3470950050032116,
+      "simulations": 50
+    },
+    {
+      "budget": 0.05,
+      "failure_recall": 0.13725490196078433,
+      "failures_found": 14.0,
+      "false_negatives": 88.0,
+      "false_positives": 36.0,
+      "k": 50,
+      "policy": "BLACKBOX_frozen_gate",
+      "precision": 0.28,
+      "recall_ci95": [
+        0.08355290247590341,
+        0.21728911049442212
+      ],
+      "sim_runtime_ms_total": 6.3470950050032116,
+      "simulations": 50
+    },
+    {
+      "budget": 0.05,
+      "failure_recall": 0.4117647058823529,
+      "failures_found": 42.0,
+      "false_negatives": 60.0,
+      "false_positives": 8.0,
+      "k": 50,
+      "policy": "interaction_aware",
+      "precision": 0.84,
+      "recall_ci95": [
+        0.3211503544990474,
+        0.5087841891964372
+      ],
+      "sim_runtime_ms_total": 6.3470950050032116,
+      "simulations": 50
+    },
+    {
+      "budget": 0.1,
+      "failure_recall": 0.10215686274509804,
+      "failures_found": 10.42,
+      "false_negatives": 91.58,
+      "false_positives": 89.58,
+      "k": 100,
+      "policy": "random",
+      "precision": 0.1042,
+      "recall_ci95": [
+        0.05412743684309119,
+        0.171129928880783
+      ],
+      "sim_runtime_ms_total": 12.694190010006423,
+      "simulations": 100
+    },
+    {
+      "budget": 0.1,
+      "failure_recall": 0.0392156862745098,
+      "failures_found": 4.0,
+      "false_negatives": 98.0,
+      "false_positives": 96.0,
+      "k": 100,
+      "policy": "amount_only",
+      "precision": 0.04,
+      "recall_ci95": [
+        0.015353823095438892,
+        0.09652657175875834
+      ],
+      "sim_runtime_ms_total": 12.694190010006423,
+      "simulations": 100
+    },
+    {
+      "budget": 0.1,
+      "failure_recall": 0.5294117647058824,
+      "failures_found": 54.0,
+      "false_negatives": 48.0,
+      "false_positives": 46.0,
+      "k": 100,
+      "policy": "anomaly_only",
+      "precision": 0.54,
+      "recall_ci95": [
+        0.4332459840604423,
+        0.6234425013743962
+      ],
+      "sim_runtime_ms_total": 12.694190010006423,
+      "simulations": 100
+    },
+    {
+      "budget": 0.1,
+      "failure_recall": 0.19607843137254902,
+      "failures_found": 20.0,
+      "false_negatives": 82.0,
+      "false_positives": 80.0,
+      "k": 100,
+      "policy": "BLACKBOX_frozen_gate",
+      "precision": 0.2,
+      "recall_ci95": [
+        0.13066968570928414,
+        0.2835492981307183
+      ],
+      "sim_runtime_ms_total": 12.694190010006423,
+      "simulations": 100
+    },
+    {
+      "budget": 0.1,
+      "failure_recall": 0.6274509803921569,
+      "failures_found": 64.0,
+      "false_negatives": 38.0,
+      "false_positives": 36.0,
+      "k": 100,
+      "policy": "interaction_aware",
+      "precision": 0.64,
+      "recall_ci95": [
+        0.5305983908791684,
+        0.7150517126717983
+      ],
+      "sim_runtime_ms_total": 12.694190010006423,
+      "simulations": 100
+    },
+    {
+      "budget": 1.0,
+      "failure_recall": 1.0,
+      "failures_found": 102.0,
+      "false_negatives": 0.0,
+      "false_positives": 898.0,
+      "k": 1000,
+      "policy": "random",
+      "precision": 0.102,
+      "recall_ci95": [
+        0.9637042523922542,
+        1.0
+      ],
+      "sim_runtime_ms_total": 126.94190010006423,
+      "simulations": 1000
+    },
+    {
+      "budget": 1.0,
+      "failure_recall": 1.0,
+      "failures_found": 102.0,
+      "false_negatives": 0.0,
+      "false_positives": 898.0,
+      "k": 1000,
+      "policy": "amount_only",
+      "precision": 0.102,
+      "recall_ci95": [
+        0.9637042523922542,
+        1.0
+      ],
+      "sim_runtime_ms_total": 126.94190010006423,
+      "simulations": 1000
+    },
+    {
+      "budget": 1.0,
+      "failure_recall": 1.0,
+      "failures_found": 102.0,
+      "false_negatives": 0.0,
+      "false_positives": 898.0,
+      "k": 1000,
+      "policy": "anomaly_only",
+      "precision": 0.102,
+      "recall_ci95": [
+        0.9637042523922542,
+        1.0
+      ],
+      "sim_runtime_ms_total": 126.94190010006423,
+      "simulations": 1000
+    },
+    {
+      "budget": 1.0,
+      "failure_recall": 1.0,
+      "failures_found": 102.0,
+      "false_negatives": 0.0,
+      "false_positives": 898.0,
+      "k": 1000,
+      "policy": "BLACKBOX_frozen_gate",
+      "precision": 0.102,
+      "recall_ci95": [
+        0.9637042523922542,
+        1.0
+      ],
+      "sim_runtime_ms_total": 126.94190010006423,
+      "simulations": 1000
+    },
+    {
+      "budget": 1.0,
+      "failure_recall": 1.0,
+      "failures_found": 102.0,
+      "false_negatives": 0.0,
+      "false_positives": 898.0,
+      "k": 1000,
+      "policy": "interaction_aware",
+      "precision": 0.102,
+      "recall_ci95": [
+        0.9637042523922542,
+        1.0
+      ],
+      "sim_runtime_ms_total": 126.94190010006423,
+      "simulations": 1000
+    }
+  ],
+  "category_recall_at_10pct": {
+    "correlated_anomalies": {
+      "BLACKBOX_frozen_gate": 0.65,
+      "anomaly_only": 1.0,
+      "interaction_aware": 1.0,
+      "n_failures": 20
+    },
+    "dependency_chain_failures": {
+      "BLACKBOX_frozen_gate": 0.0,
+      "anomaly_only": 0.6470588235294118,
+      "interaction_aware": 0.7058823529411765,
+      "n_failures": 17
+    },
+    "high_value_low_blast_radius": {
+      "n_failures": 0
+    },
+    "jointly_dangerous": {
+      "BLACKBOX_frozen_gate": 0.0,
+      "anomaly_only": 0.13333333333333333,
+      "interaction_aware": 0.13333333333333333,
+      "n_failures": 15
+    },
+    "low_value_high_blast_radius": {
+      "BLACKBOX_frozen_gate": 0.0,
+      "anomaly_only": 0.1,
+      "interaction_aware": 0.45,
+      "n_failures": 20
+    },
+    "normal": {
+      "BLACKBOX_frozen_gate": 0.0,
+      "anomaly_only": 0.1,
+      "interaction_aware": 0.2,
+      "n_failures": 10
+    },
+    "obvious_single_signal_danger": {
+      "BLACKBOX_frozen_gate": 0.25,
+      "anomaly_only": 1.0,
+      "interaction_aware": 1.0,
+      "n_failures": 16
+    },
+    "unusual_but_harmless": {
+      "BLACKBOX_frozen_gate": 0.75,
+      "anomaly_only": 0.5,
+      "interaction_aware": 0.75,
+      "n_failures": 4
+    }
+  },
+  "created_at_utc": "2026-10-13T20:23:26.685815+00:00",
+  "demo_tx": {
+    "account_avg": 1966.7,
+    "account_std": 831.23,
+    "amount": 2406.59,
+    "category_label_not_used_by_gate": "jointly_dangerous",
+    "contributions": {
+      "A": 0.11885245901639344,
+      "D": 0.24,
+      "M": 0.03969027826233414,
+      "U": 0.015331354467902578
+    },
+    "features": {
+      "amount_z": 0.5292037101644552,
+      "max_bg": 0.123,
+      "path_max_bg": 0.123,
+      "recent_amount_ratio": 1.0843341638277317,
+      "recent_count": 1.0,
+      "recent_same_type": 1.0
+    },
+    "gate_decision": false,
+    "model_backend": "numpy",
+    "path": "score 0.413874 < 0.60 -> SKIP NO_SIMULATION",
+    "score": 0.41387409174663015,
+    "signals": {
+      "A": 0.47540983606557374,
+      "D": 0.8,
+      "M": 0.1323009275411138,
+      "U": 0.10220902978601719
+    },
+    "threshold": 0.6,
+    "transaction_id": "TX-DEMO-0001"
+  },
+  "elapsed_s": 2.97,
+  "false_negative_profile_at_10pct": {
+    "BLACKBOX_frozen_gate": {
+      "budget": 0.1,
+      "k": 100,
+      "miss_rate_of_failures": 0.803921568627451,
+      "missed_by_category": {
+        "correlated_anomalies": 7,
+        "dependency_chain_failures": 17,
+        "jointly_dangerous": 15,
+        "low_value_high_blast_radius": 20,
+        "normal": 10,
+        "obvious_single_signal_danger": 12,
+        "unusual_but_harmless": 1
+      },
+      "missed_by_failed_scenario": {
+        "3x_volume": 81,
+        "fraud_spike": 38,
+        "service_latency": 32
+      },
+      "missed_by_transaction_type": {
+        "ach_batch": 29,
+        "card_payment": 13,
+        "wire_transfer": 40
+      },
+      "missed_ids_sample": [
+        "TX-00108-B",
+        "TX-00138",
+        "TX-00154",
+        "TX-00258-B",
+        "TX-00306",
+        "TX-00379",
+        "TX-00461",
+        "TX-00519",
+        "TX-00524-B",
+        "TX-00552",
+        "TX-00604",
+        "TX-00817",
+        "TX-00829",
+        "TX-00849-B",
+        "TX-00904",
+        "TX-00925",
+        "TX-00973-B",
+        "TX-01033",
+        "TX-01035-B",
+        "TX-01113",
+        "TX-01160",
+        "TX-01263",
+        "TX-01407",
+        "TX-01427",
+        "TX-01429",
+        "TX-01516",
+        "TX-01529",
+        "TX-01782",
+        "TX-01803",
+        "TX-01830"
+      ],
+      "n_found": 20,
+      "n_missed_failures": 82,
+      "n_selected": 100,
+      "policy": "BLACKBOX_frozen_gate"
+    },
+    "anomaly_only": {
+      "budget": 0.1,
+      "k": 100,
+      "miss_rate_of_failures": 0.47058823529411764,
+      "missed_by_category": {
+        "dependency_chain_failures": 6,
+        "jointly_dangerous": 13,
+        "low_value_high_blast_radius": 18,
+        "normal": 9,
+        "unusual_but_harmless": 2
+      },
+      "missed_by_failed_scenario": {
+        "3x_volume": 47,
+        "fraud_spike": 17,
+        "service_latency": 23
+      },
+      "missed_by_transaction_type": {
+        "ach_batch": 15,
+        "card_payment": 3,
+        "wire_transfer": 30
+      },
+      "missed_ids_sample": [
+        "TX-00108-B",
+        "TX-00138",
+        "TX-00461",
+        "TX-00524-B",
+        "TX-00604",
+        "TX-00817",
+        "TX-00829",
+        "TX-00849-B",
+        "TX-00925",
+        "TX-00973-B",
+        "TX-01035-B",
+        "TX-01263",
+        "TX-01529",
+        "TX-01782",
+        "TX-01803",
+        "TX-01830",
+        "TX-01919",
+        "TX-01955-B",
+        "TX-02261",
+        "TX-02276-B",
+        "TX-02295",
+        "TX-02403",
+        "TX-02479",
+        "TX-02491",
+        "TX-02510",
+        "TX-02565-B",
+        "TX-02635",
+        "TX-02668",
+        "TX-02807",
+        "TX-03111"
+      ],
+      "n_found": 54,
+      "n_missed_failures": 48,
+      "n_selected": 100,
+      "policy": "anomaly_only"
+    },
+    "interaction_aware": {
+      "budget": 0.1,
+      "k": 100,
+      "miss_rate_of_failures": 0.37254901960784315,
+      "missed_by_category": {
+        "dependency_chain_failures": 5,
+        "jointly_dangerous": 13,
+        "low_value_high_blast_radius": 11,
+        "normal": 8,
+        "unusual_but_harmless": 1
+      },
+      "missed_by_failed_scenario": {
+        "3x_volume": 37,
+        "fraud_spike": 15,
+        "service_latency": 14
+      },
+      "missed_by_transaction_type": {
+        "ach_batch": 16,
+        "card_payment": 2,
+        "wire_transfer": 20
+      },
+      "missed_ids_sample": [
+        "TX-00108-B",
+        "TX-00138",
+        "TX-00461",
+        "TX-00524-B",
+        "TX-00817",
+        "TX-00849-B",
+        "TX-00925",
+        "TX-00973-B",
+        "TX-01035-B",
+        "TX-01263",
+        "TX-01529",
+        "TX-01830",
+        "TX-01919",
+        "TX-01955-B",
+        "TX-02261",
+        "TX-02276-B",
+        "TX-02295",
+        "TX-02479",
+        "TX-02491",
+        "TX-02510",
+        "TX-02565-B",
+        "TX-02668",
+        "TX-02754",
+        "TX-02807",
+        "TX-03117-B",
+        "TX-03143",
+        "TX-03313-B",
+        "TX-03419-B",
+        "TX-03438",
+        "TX-03662"
+      ],
+      "n_found": 64,
+      "n_missed_failures": 38,
+      "n_selected": 100,
+      "policy": "interaction_aware"
+    }
+  },
+  "frozen_constants_untouched": {
+    "scenarios": [
+      "3x_volume",
+      "fraud_spike",
+      "service_latency"
+    ],
+    "threshold": 0.6,
+    "weights": {
+      "anomaly": 0.25,
+      "dependency": 0.3,
+      "magnitude": 0.3,
+      "uncertainty": 0.15
+    }
+  },
+  "hypothesis_evaluation_rule": "Hypothesis supported only if interaction_aware failure_recall > anomaly_only at 1%, 5% and 10% on validation with identical k, labels and seeds.",
+  "hypothesis_verdict": "SUPPORTED_on_validation",
+  "interaction_matched_select_rate": {
+    "failure_recall": 0.6666666666666666,
+    "k": 114,
+    "precision": 0.5964912280701754,
+    "select_rate": 0.114
+  },
+  "linuxone_verified": false,
+  "methodology": {
+    "anomaly_raw_vs_cdf_A_topk_jaccard": [
+      {
+        "budget": 0.01,
+        "jaccard": 1.0
+      },
+      {
+        "budget": 0.05,
+        "jaccard": 1.0
+      },
+      {
+        "budget": 0.1,
+        "jaccard": 1.0
+      }
+    ],
+    "budget_k": {
+      "0.005": {
+        "fraction": 0.005,
+        "k": 5
+      },
+      "0.01": {
+        "fraction": 0.01,
+        "k": 10
+      },
+      "0.02": {
+        "fraction": 0.02,
+        "k": 20
+      },
+      "0.05": {
+        "fraction": 0.05,
+        "k": 50
+      },
+      "0.1": {
+        "fraction": 0.1,
+        "k": 100
+      },
+      "1.0": {
+        "fraction": 1.0,
+        "k": 1000
+      }
+    },
+    "labels_source": "CrashTestEngine via label_record (simulator, not gate)",
+    "models_fitted_on": "calibration only (GateModels.fit DataLeakError guard)",
+    "n": 1000,
+    "n_failures": 102,
+    "ranking_semantics": "stable argsort descending; top-k simulated; identical k per budget for all policies",
+    "split": "validation",
+    "test_split_used": false
+  },
+  "model_backend": "numpy",
+  "primary_budget_comparison": {
+    "0.01": {
+      "BLACKBOX_frozen_gate": 0.0392156862745098,
+      "anomaly_only": 0.058823529411764705,
+      "beats_anomaly": true,
+      "beats_gate": true,
+      "interaction_aware": 0.09803921568627451
+    },
+    "0.05": {
+      "BLACKBOX_frozen_gate": 0.13725490196078433,
+      "anomaly_only": 0.3235294117647059,
+      "beats_anomaly": true,
+      "beats_gate": true,
+      "interaction_aware": 0.4117647058823529
+    },
+    "0.1": {
+      "BLACKBOX_frozen_gate": 0.19607843137254902,
+      "anomaly_only": 0.5294117647058824,
+      "beats_anomaly": true,
+      "beats_gate": true,
+      "interaction_aware": 0.6274509803921569
+    }
+  },
+  "python": "3.12.10",
+  "report": "phase2_gate_diagnosis_and_research",
+  "score_distributions": {
+    "A": {
+      "failures": {
+        "max": 0.9988004798080767,
+        "mean": 0.8275709324113494,
+        "n": 102,
+        "p50": 0.9078368652538984,
+        "p90": 0.9894442223110756,
+        "std": 0.19406481166842227
+      },
+      "non_failures": {
+        "max": 1.0,
+        "mean": 0.47315639445780705,
+        "n": 898,
+        "p50": 0.49020391843262695,
+        "p90": 0.8377848860455818,
+        "std": 0.27100879085257906
+      }
+    },
+    "D": {
+      "failures": {
+        "max": 1.0,
+        "mean": 0.7152380952380952,
+        "n": 102,
+        "p50": 0.6742857142857144,
+        "p90": 0.92,
+        "std": 0.15090408261605587
+      },
+      "non_failures": {
+        "max": 1.0,
+        "mean": 0.5851797645561566,
+        "n": 898,
+        "p50": 0.5771428571428572,
+        "p90": 0.8400000000000001,
+        "std": 0.1809218542145963
+      }
+    },
+    "M": {
+      "failures": {
+        "max": 1.0,
+        "mean": 0.24157953724466655,
+        "n": 102,
+        "p50": 0.0970110515201854,
+        "p90": 0.8470968464990494,
+        "std": 0.3286153558385195
+      },
+      "non_failures": {
+        "max": 1.0,
+        "mean": 0.2511080936894117,
+        "n": 898,
+        "p50": 0.03114009366739166,
+        "p90": 1.0,
+        "std": 0.3622521400548022
+      }
+    },
+    "U": {
+      "failures": {
+        "max": 0.4127501080104611,
+        "mean": 0.04224220566979115,
+        "n": 102,
+        "p50": 0.006058479186114657,
+        "p90": 0.14406480579872696,
+        "std": 0.07610427921550506
+      },
+      "non_failures": {
+        "max": 0.40148330663757015,
+        "mean": 0.013800229328982292,
+        "n": 898,
+        "p50": 0.0007777447422329768,
+        "p90": 0.028064095537866925,
+        "std": 0.04064447378980198
+      }
+    },
+    "anomaly_raw": {
+      "failures": {
+        "max": 17.023309052735275,
+        "mean": 5.383570537240387,
+        "n": 102,
+        "p50": 4.519159696830857,
+        "p90": 8.920211507364948,
+        "std": 2.724084560691183
+      },
+      "non_failures": {
+        "max": 27.15412260949886,
+        "mean": 2.873174558386483,
+        "n": 898,
+        "p50": 2.6840667025842757,
+        "p90": 3.7603482813571856,
+        "std": 1.4116096133309781
+      }
+    },
+    "gate_score": {
+      "failures": {
+        "max": 0.8756126361535884,
+        "mean": 0.5002743536981346,
+        "n": 102,
+        "p50": 0.4657451875617939,
+        "p90": 0.7028013851902185,
+        "std": 0.11740054718419947
+      },
+      "non_failures": {
+        "max": 0.8589693799719742,
+        "mean": 0.3712454904874696,
+        "n": 898,
+        "p50": 0.34119358039199876,
+        "p90": 0.6039140881904738,
+        "std": 0.13992096591785205
+      }
+    }
+  },
+  "signal_point_biserial_with_failure": {
+    "A_anomaly_norm": 0.37618513734614134,
+    "D_dependency": 0.21581197963919088,
+    "M_magnitude": -0.008033384551502659,
+    "U_uncertainty": 0.18571488538513653,
+    "amount_z": -0.03240295865669459,
+    "anomaly_raw": 0.42988938715379704,
+    "gate_score": 0.2726616728975377
+  },
+  "split": "validation",
+  "threshold_operating_point_frozen_gate": {
+    "category_recall": {
+      "correlated_anomalies": 0.75,
+      "dependency_chain_failures": 0.0,
+      "high_value_low_blast_radius": null,
+      "jointly_dangerous": 0.0,
+      "low_value_high_blast_radius": 0.0,
+      "normal": 0.0,
+      "obvious_single_signal_danger": 0.25,
+      "unusual_but_harmless": 0.75
+    },
+    "failure_recall": 0.21568627450980393,
+    "failures_found": 22.0,
+    "false_negative_rate": 0.7843137254901961,
+    "mean_simulation_runtime_ms": 0.13495526320439877,
+    "policy": "BLACKBOX@threshold",
+    "precision": 0.19298245614035087,
+    "simulation_avoidance": 0.886,
+    "simulation_budget": 0.114,
+    "simulation_count": 114.0,
+    "simulation_fraction": 0.114,
+    "threshold": 0.6,
+    "total_failures": 102,
+    "total_simulation_runtime_ms": 15.38490000530146
+  },
+  "window_pressure": {
+    "corr_with_failure": 0.23712986406600317,
+    "mean_failures": 0.09573176102352605,
+    "mean_non_failures": 0.04308598811721876
+  }
+}

@@ -1,0 +1,3 @@
+# Full development stack: production runtime (with optional sklearn) + tests.
+-r requirements.txt
+-r requirements-test.txt

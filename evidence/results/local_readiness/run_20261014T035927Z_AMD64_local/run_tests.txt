@@ -1,0 +1,236 @@
+PASS  tests.contract.test_schemas_and_interfaces::test_certificate_enums  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_frozen_interface_names_and_parameters  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_gate_formula_constants_are_frozen  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_node_type_vocabulary_matches_config  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_scenario_identifiers_are_exact  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_schema_model_names_and_fields_are_frozen  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_transaction_validation_rejects_bad_input  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_demo_mode_is_deterministic_and_uses_the_fixed_transaction  (2.14s)
+PASS  tests.integration.test_full_pipeline::test_full_pipeline_gate_selected_and_failing  (0.51s)
+PASS  tests.integration.test_full_pipeline::test_full_pipeline_low_impact_path_runs_no_simulation  (0.01s)
+PASS  tests.integration.test_full_pipeline::test_health_reports_the_real_architecture  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_http_routes_when_fastapi_is_available  (2.37s)
+PASS  tests.integration.test_full_pipeline::test_input_errors_run_no_business_logic  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_internal_gate_failure_degrades_to_review_not_to_safety  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_internal_simulation_failure_degrades_to_review_and_keeps_the_score  (0.01s)
+PASS  tests.integration.test_full_pipeline::test_selected_and_surviving_transaction_is_allowed_with_margin  (0.01s)
+PASS  tests.integration.test_full_pipeline::test_showcase_covers_gate_outcomes_and_never_uses_the_test_split  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_trace_and_stage_timing_diagnostics  (0.01s)
+PASS  tests.integration.test_http_api::test_http_analyze_demo_and_validation_errors  (1.56s)
+PASS  tests.integration.test_http_api::test_http_health_dashboard_and_static_assets  (0.92s)
+PASS  tests.unit.test_certificate::test_evidence_values_come_from_the_inputs  (0.00s)
+PASS  tests.unit.test_certificate::test_inconsistent_inputs_are_rejected  (0.00s)
+PASS  tests.unit.test_certificate::test_limitations_are_always_present_and_marked  (0.00s)
+PASS  tests.unit.test_certificate::test_margin_exactly_at_review_margin_is_adequate  (0.00s)
+PASS  tests.unit.test_certificate::test_no_simulation_certificate  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_adequate_margin_allows_and_lower_bound_counts_as_adequate  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_any_stress_failure_blocks  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_low_impact_allows_normal_path  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_thin_margin_reviews  (0.00s)
+PASS  tests.unit.test_certificate::test_review_certificate_never_claims_safety  (0.00s)
+PASS  tests.unit.test_certificate::test_simulated_certificate_with_failure_blocks_and_cites_metrics  (0.00s)
+PASS  tests.unit.test_data::test_account_and_context_linkage  (0.43s)
+PASS  tests.unit.test_data::test_demo_pair_is_outside_the_evaluation_splits  (0.00s)
+PASS  tests.unit.test_data::test_exactly_five_joint_profiles_are_present  (0.00s)
+PASS  tests.unit.test_data::test_generation_is_deterministic_under_a_fixed_seed  (0.24s)
+PASS  tests.unit.test_data::test_graph_uses_only_frozen_node_types  (0.01s)
+PASS  tests.unit.test_data::test_ids_are_unique_and_all_categories_present  (0.00s)
+PASS  tests.unit.test_data::test_joint_cases_are_not_extreme_by_amount_alone  (0.00s)
+PASS  tests.unit.test_data::test_joint_pairs_keep_ground_truth_structure_and_60_second_cooccurrence  (0.04s)
+PASS  tests.unit.test_data::test_unknown_account_and_unsupported_type_are_input_errors  (0.00s)
+PASS  tests.unit.test_diagnostics_env::test_architecture_truth_rules_match_process_machine  (0.26s)
+PASS  tests.unit.test_diagnostics_env::test_certificate_runtime_evidence_line_is_truthful  (0.93s)
+PASS  tests.unit.test_diagnostics_env::test_collect_returns_required_sections  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_config_fingerprint_exposes_frozen_threshold  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_dataset_fingerprint_reports_manifest_match  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_does_not_claim_linuxone_from_config_mentions_alone  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_model_backend_selection_is_reported  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_pointer_bits_matches_struct  (0.00s)
+PASS  tests.unit.test_diagnostics_env::test_report_is_json_serializable  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_validation_report_evidence_bundle_write  (0.01s)
+PASS  tests.unit.test_frontend_contract::test_api_demo_no_simulation_is_honest_and_empty  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_api_simulated_example_has_paired_forks_and_scenarios  (0.01s)
+PASS  tests.unit.test_frontend_contract::test_api_unknown_type_and_account_return_input_errors  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_action_and_status_classes_match_certificate_literals  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_exists_and_is_presentation_only  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_renders_certificate_fields_and_honest_no_simulation_notice  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_skips_incomplete_fork_pairs  (0.00s)
+PASS  tests.unit.test_gate::test_all_signals_and_scores_are_normalized_to_unit_interval  (0.65s)
+PASS  tests.unit.test_gate::test_anomaly_signal_is_higher_for_failures_than_for_ordinary_transactions  (0.61s)
+PASS  tests.unit.test_gate::test_exact_weighted_equation  (0.00s)
+PASS  tests.unit.test_gate::test_fitting_on_any_split_but_calibration_is_refused  (0.00s)
+PASS  tests.unit.test_gate::test_magnitude_is_monotone_and_zero_below_baseline  (0.00s)
+PASS  tests.unit.test_gate::test_models_were_fitted_on_the_calibration_split_only  (0.00s)
+PASS  tests.unit.test_gate::test_numpy_fallback_backend_produces_valid_scores  (1.46s)
+PASS  tests.unit.test_gate::test_same_input_and_seed_give_the_same_score  (1.89s)
+PASS  tests.unit.test_gate::test_threshold_routing_boundary_is_0_60_inclusive  (0.55s)
+PASS  tests.unit.test_gate::test_uncertainty_is_a_real_ensemble_disagreement_and_reproducible  (0.04s)
+PASS  tests.unit.test_packaging_numpy_runtime::test_numpy_backend_selects_without_sklearn_import  (0.00s)
+PASS  tests.unit.test_packaging_numpy_runtime::test_requirements_numpy_declares_runtime_deps_only  (0.00s)
+PASS  tests.unit.test_packaging_numpy_runtime::test_runtime_modules_import_with_stdlib_plus_numpy_stack  (0.00s)
+FAIL  tests.unit.test_packaging_numpy_runtime::test_smoke_without_httpx_skips_http_not_fail
+PASS  tests.unit.test_phase2_diagnostics::test_budget_count_is_ceil_and_capped  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_interaction_score_does_not_read_failure_labels  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_interaction_score_in_unit_interval_and_deterministic  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_methodology_flags_test_split_unused  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_rank_policies_same_k_for_all_deterministic_policies  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_top_k_mask_selects_highest_scores  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_validation_anomaly_raw_and_cdf_A_share_topk  (1.65s)
+PASS  tests.unit.test_phase2_diagnostics::test_window_pressure_feature_build_without_labels  (1.62s)
+PASS  tests.unit.test_phase3_ranking::test_bootstrap_diff_zero_when_masks_equal  (0.02s)
+PASS  tests.unit.test_phase3_ranking::test_bootstrap_respects_cluster_structure  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_budget_count_ceil_and_bounds  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_csv_roundtrip_and_recalc  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_interaction_formula_convex_combination_in_unit_interval  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_interaction_score_label_independent  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_monotonic_shift_preserves_ranking  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_ranking_deterministic_across_calls  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_recalc_metrics_hand_computed  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_stable_topk_matches_numpy_stable_argsort  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_tie_break_prefers_lower_original_index  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_topk_selects_exactly_k  (0.00s)
+PASS  tests.unit.test_simulation::test_attack_returns_one_normal_and_one_stress_result  (0.00s)
+PASS  tests.unit.test_simulation::test_failure_predicates_are_monotone_in_intensity  (0.41s)
+PASS  tests.unit.test_simulation::test_failure_reasons_are_metrics_not_labels  (0.00s)
+PASS  tests.unit.test_simulation::test_fork_isolation_state_is_never_stressed_twice  (0.00s)
+PASS  tests.unit.test_simulation::test_fragility_edge_cases  (0.00s)
+PASS  tests.unit.test_simulation::test_fragility_interval_is_one_resolution_wide_and_honest  (0.06s)
+PASS  tests.unit.test_simulation::test_normal_and_stress_outcomes_are_distinct_under_load  (0.00s)
+PASS  tests.unit.test_simulation::test_three_scenarios_behave_differently  (0.00s)
+PASS  tests.unit.test_simulation::test_unknown_scenario_and_foreign_baseline_are_rejected  (0.00s)
+
+99 passed, 1 failed in 19.0s
+
+C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-8fb8ade96707", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.166, "stage": "context_loaded", "status": "ok", "trace_id": "TR-8fb8ade96707", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 1.395, "stage": "gate_scored", "status": "ok", "trace_id": "TR-8fb8ade96707", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.088, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-8fb8ade96707", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 1.769, "stage": "response_sent", "status": "ok", "trace_id": "TR-8fb8ade96707", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-ed9c1f0e609a", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.011, "error_code": "E001", "error_message": "unknown account_id 'ACC-NOPE'", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-ed9c1f0e609a", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-ff37c6cd2d3f", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.011, "error_code": "E001", "error_message": "unsupported transaction_type 'crypto_swap'; supported: card_payment, wire_transfer, ach_batch, refund, internal_transfer", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-ff37c6cd2d3f", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-e260b92fb4b0", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.146, "stage": "context_loaded", "status": "ok", "trace_id": "TR-e260b92fb4b0", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.014, "error_code": null, "error_message": "model exploded", "error_type": "RuntimeError", "owner": "unknown", "recovery_action": "reproduce with the demo transaction; inspect first failing stage", "stage": "gate_scored", "status": "error", "trace_id": "TR-e260b92fb4b0", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.255, "stage": "response_sent", "status": "ok", "trace_id": "TR-e260b92fb4b0", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.174, "stage": "context_loaded", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.807, "stage": "gate_scored", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.033, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.028, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.036, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.209, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.107, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 1.752, "stage": "response_sent", "status": "ok", "trace_id": "TR-d84ef0ed22ff", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.143, "stage": "context_loaded", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.854, "stage": "gate_scored", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.033, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.028, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.197, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.111, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 1.804, "stage": "response_sent", "status": "ok", "trace_id": "TR-3d6588ab50c0", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-1d4eb809d63e", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.143, "stage": "context_loaded", "status": "ok", "trace_id": "TR-1d4eb809d63e", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.789, "stage": "gate_scored", "status": "ok", "trace_id": "TR-1d4eb809d63e", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-1d4eb809d63e", "transaction_id": "TX-00008"}
+{"elapsed_ms": 1.097, "stage": "response_sent", "status": "ok", "trace_id": "TR-1d4eb809d63e", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-261c231ccf91", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.126, "stage": "context_loaded", "status": "ok", "trace_id": "TR-261c231ccf91", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.791, "stage": "gate_scored", "status": "ok", "trace_id": "TR-261c231ccf91", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.072, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-261c231ccf91", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 1.076, "stage": "response_sent", "status": "ok", "trace_id": "TR-261c231ccf91", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.157, "stage": "context_loaded", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.759, "stage": "gate_scored", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.033, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.028, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.026, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.204, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.108, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 1.693, "stage": "response_sent", "status": "ok", "trace_id": "TR-097c1f8486b2", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.151, "stage": "context_loaded", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.788, "stage": "gate_scored", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.033, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.026, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.197, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.109, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 1.733, "stage": "response_sent", "status": "ok", "trace_id": "TR-34a58da6c775", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.18, "stage": "context_loaded", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.852, "stage": "gate_scored", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.033, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.036, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.026, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.204, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.11, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 1.798, "stage": "response_sent", "status": "ok", "trace_id": "TR-adf7fd04a4a3", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.171, "stage": "context_loaded", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.788, "stage": "gate_scored", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.031, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.026, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.217, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.107, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 1.714, "stage": "response_sent", "status": "ok", "trace_id": "TR-0a029a216823", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-33c0353e7869", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.128, "stage": "context_loaded", "status": "ok", "trace_id": "TR-33c0353e7869", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.819, "stage": "gate_scored", "status": "ok", "trace_id": "TR-33c0353e7869", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.066, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-33c0353e7869", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 1.084, "stage": "response_sent", "status": "ok", "trace_id": "TR-33c0353e7869", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.256, "stage": "context_loaded", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 1.043, "stage": "gate_scored", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.037, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.034, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.033, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.415, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.138, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 2.37, "stage": "response_sent", "status": "ok", "trace_id": "TR-0d077befee0e", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-bbf5f66290d4", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.02, "error_code": "E001", "error_message": "unsupported transaction_type 'crypto_swap'; supported: card_payment, wire_transfer, ach_batch, refund, internal_transfer", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-bbf5f66290d4", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-64aa2c7c6142", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.176, "stage": "context_loaded", "status": "ok", "trace_id": "TR-64aa2c7c6142", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.858, "stage": "gate_scored", "status": "ok", "trace_id": "TR-64aa2c7c6142", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.066, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-64aa2c7c6142", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 1.151, "stage": "response_sent", "status": "ok", "trace_id": "TR-64aa2c7c6142", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-6b8dd861f743", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.128, "stage": "context_loaded", "status": "ok", "trace_id": "TR-6b8dd861f743", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.773, "stage": "gate_scored", "status": "ok", "trace_id": "TR-6b8dd861f743", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.059, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-6b8dd861f743", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 1.038, "stage": "response_sent", "status": "ok", "trace_id": "TR-6b8dd861f743", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.159, "stage": "context_loaded", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 1.099, "stage": "gate_scored", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.036, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.028, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.043, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.21, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.12, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 2.106, "stage": "response_sent", "status": "ok", "trace_id": "TR-1ae117ddb301", "transaction_id": "TX-00300"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-63e1775923dc", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.017, "error_code": "E001", "error_message": "unsupported transaction_type 'crypto_swap'; supported: card_payment, wire_transfer, ach_batch, refund, internal_transfer", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-63e1775923dc", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-e6635a4d69de", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.008, "error_code": "E001", "error_message": "unknown account_id 'ACC-NOPE'", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-e6635a4d69de", "transaction_id": "TX-DEMO-0001"}
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Temp\opencode\blackbox_work\blackbox\scripts\run_tests.py", line 35, in main
+    getattr(module, fn_name)()
+  File "C:\Users\user\AppData\Local\Temp\opencode\blackbox_work\blackbox\tests\unit\test_packaging_numpy_runtime.py", line 71, in test_smoke_without_httpx_skips_http_not_fail
+    assert "FastAPI/test client unavailable" in src
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

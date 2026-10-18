@@ -1,0 +1,9 @@
+# Test-only dependencies (NOT required for the NumPy production runtime).
+# Install after requirements-numpy.txt for the full documented test workflow:
+#   pip install -r requirements-test.txt
+# Then HTTP integration checks PASS instead of SKIP:
+#   python scripts/smoke_test.py
+#   python -m pytest -q
+#   python scripts/run_tests.py
+pytest>=8.0
+httpx>=0.27

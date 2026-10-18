@@ -1,0 +1,283 @@
+{
+  "$defs": {
+    "ForkResult": {
+      "properties": {
+        "fork_name": {
+          "enum": [
+            "normal",
+            "stress"
+          ],
+          "title": "Fork Name",
+          "type": "string"
+        },
+        "scenario": {
+          "title": "Scenario",
+          "type": "string"
+        },
+        "survived": {
+          "title": "Survived",
+          "type": "boolean"
+        },
+        "metrics": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Metrics",
+          "type": "object"
+        }
+      },
+      "required": [
+        "fork_name",
+        "scenario",
+        "survived",
+        "metrics"
+      ],
+      "title": "ForkResult",
+      "type": "object"
+    },
+    "FragilityResult": {
+      "properties": {
+        "scenario": {
+          "title": "Scenario",
+          "type": "string"
+        },
+        "breaking_threshold": {
+          "title": "Breaking Threshold",
+          "type": "number"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "resolution": {
+          "title": "Resolution",
+          "type": "number"
+        }
+      },
+      "required": [
+        "scenario",
+        "breaking_threshold",
+        "unit",
+        "resolution"
+      ],
+      "title": "FragilityResult",
+      "type": "object"
+    },
+    "ImpactScore": {
+      "properties": {
+        "transaction_id": {
+          "title": "Transaction Id",
+          "type": "string"
+        },
+        "signals": {
+          "$ref": "#/$defs/ImpactSignals"
+        },
+        "score": {
+          "title": "Score",
+          "type": "number"
+        },
+        "gate_decision": {
+          "title": "Gate Decision",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "transaction_id",
+        "signals",
+        "score",
+        "gate_decision"
+      ],
+      "title": "ImpactScore",
+      "type": "object"
+    },
+    "ImpactSignals": {
+      "properties": {
+        "magnitude": {
+          "title": "Magnitude",
+          "type": "number"
+        },
+        "dependency": {
+          "title": "Dependency",
+          "type": "number"
+        },
+        "anomaly": {
+          "title": "Anomaly",
+          "type": "number"
+        },
+        "uncertainty": {
+          "title": "Uncertainty",
+          "type": "number"
+        }
+      },
+      "required": [
+        "magnitude",
+        "dependency",
+        "anomaly",
+        "uncertainty"
+      ],
+      "title": "ImpactSignals",
+      "type": "object"
+    },
+    "RuntimeMetadata": {
+      "properties": {
+        "runtime": {
+          "title": "Runtime",
+          "type": "string"
+        },
+        "architecture": {
+          "title": "Architecture",
+          "type": "string"
+        },
+        "model_versions": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Model Versions",
+          "type": "object"
+        },
+        "random_seed": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Random Seed"
+        },
+        "git_revision": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Git Revision"
+        }
+      },
+      "required": [
+        "runtime",
+        "architecture"
+      ],
+      "title": "RuntimeMetadata",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "certificate_id": {
+      "title": "Certificate Id",
+      "type": "string"
+    },
+    "trace_id": {
+      "title": "Trace Id",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "NO_SIMULATION",
+        "SIMULATED",
+        "REVIEW"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "transaction_id": {
+      "title": "Transaction Id",
+      "type": "string"
+    },
+    "decision_description": {
+      "title": "Decision Description",
+      "type": "string"
+    },
+    "impact_score": {
+      "$ref": "#/$defs/ImpactScore"
+    },
+    "forks_tested": {
+      "items": {
+        "$ref": "#/$defs/ForkResult"
+      },
+      "title": "Forks Tested",
+      "type": "array"
+    },
+    "fragility": {
+      "items": {
+        "$ref": "#/$defs/FragilityResult"
+      },
+      "title": "Fragility",
+      "type": "array"
+    },
+    "recommended_action": {
+      "enum": [
+        "ALLOW_NORMAL_PATH",
+        "REVIEW",
+        "BLOCK_OR_HOLD"
+      ],
+      "title": "Recommended Action",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "runtime": {
+      "$ref": "#/$defs/RuntimeMetadata"
+    }
+  },
+  "required": [
+    "certificate_id",
+    "trace_id",
+    "status",
+    "transaction_id",
+    "decision_description",
+    "impact_score",
+    "forks_tested",
+    "fragility",
+    "recommended_action",
+    "evidence",
+    "runtime"
+  ],
+  "title": "BLACKBOX DecisionCertificate",
+  "type": "object",
+  "description": "Decision Certificate issued by the Impact Gate preflight. status=NO_SIMULATION means deep simulation did not run (score below threshold); forks_tested is empty and must not be read as proof of safety under load. Limitations are evidence lines prefixed 'LIMITATION: '.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blackbox.local/schemas/decision_certificate.v1.schema.json",
+  "x-blackbox-policy": {
+    "policy_version": "1.0.0",
+    "app_version": "0.1.0-prebuild",
+    "formula": "I = 0.30*M + 0.30*D + 0.25*A + 0.15*U",
+    "threshold": 0.6,
+    "weights": {
+      "magnitude": 0.3,
+      "dependency": 0.3,
+      "anomaly": 0.25,
+      "uncertainty": 0.15
+    },
+    "simulate_iff": "score >= threshold",
+    "simulation_status_field": "status",
+    "simulation_status_values": [
+      "NO_SIMULATION",
+      "SIMULATED",
+      "REVIEW"
+    ],
+    "limitations_location": "evidence[] where item startswith 'LIMITATION: '",
+    "run_identifiers": [
+      "certificate_id",
+      "trace_id"
+    ],
+    "score_components": "impact_score.{score,signals,gate_decision}",
+    "scenario_outcomes": "forks_tested[] + fragility[]"
+  },
+  "x-blackbox-export": {
+    "generator": "scripts/export_certificate_schema.py",
+    "source_model": "backend.shared.schemas.DecisionCertificate",
+    "note": "Generated from the live Pydantic model; no fields invented."
+  }
+}

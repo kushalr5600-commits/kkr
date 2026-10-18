@@ -1,0 +1,17 @@
+{
+  "python": "3.12.10",
+  "implementation": "CPython",
+  "machine": "AMD64",
+  "bits": 64,
+  "platform": "Windows-10-10.0.19045-SP0",
+  "deps": {
+    "numpy": "2.5.2",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.52.4",
+    "pydantic": "2.13.4",
+    "httpx": "0.28.1",
+    "pytest": "9.1.1",
+    "sklearn": null,
+    "jsonschema": "4.26.0"
+  }
+}

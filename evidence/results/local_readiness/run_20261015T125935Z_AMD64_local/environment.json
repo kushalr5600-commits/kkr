@@ -1,0 +1,10 @@
+{
+  "captured_at_utc": "2026-10-15T12:59:35.957911+00:00",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "machine": "AMD64",
+  "python": "3.12.10",
+  "runtime_label_note": "linuxone only when machine==s390x on the real guest",
+  "numpy": "2.5.2",
+  "sklearn": "1.9.1",
+  "httpx": "0.28.1"
+}

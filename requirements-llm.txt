@@ -1,0 +1,11 @@
+# Optional: local LLM narrative (IBM Granite) for scripts/llm_service.py.
+#
+#   pip install -r requirements-llm.txt
+#   python scripts/llm_service.py --model <path-to-granite-*.gguf>
+#
+# The .gguf path runs IBM Granite through llama.cpp (CPU, greedy) and needs
+# llama-cpp-python ONLY - no torch, no transformers. Prebuilt CPU wheels are
+# served from the index below; on LinuxONE/s390x it compiles from source,
+# the same way scikit-learn and xgboost do in the Dockerfile.
+--extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cpu
+llama-cpp-python>=0.3.36

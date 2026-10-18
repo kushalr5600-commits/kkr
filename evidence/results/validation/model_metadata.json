@@ -1,0 +1,37 @@
+{
+ "split": "validation",
+ "evaluated_at_utc": "2026-10-13T02:28:31+00:00",
+ "n_transactions": 1000,
+ "n_true_failures": 102,
+ "dataset_seed": 42,
+ "dataset_split_counts": {
+  "calibration": 2501,
+  "demo": 2,
+  "test": 1499,
+  "validation": 1000
+ },
+ "score_threshold": 0.6,
+ "gate_weights": {
+  "magnitude": 0.3,
+  "dependency": 0.3,
+  "anomaly": 0.25,
+  "uncertainty": 0.15
+ },
+ "gate_runtime_ms_per_transaction": 0.08179356799999482,
+ "mean_simulation_runtime_ms_per_transaction": 0.045262189000268904,
+ "python": "3.13.16",
+ "architecture": "x86_64",
+ "models": {
+  "backend": "sklearn",
+  "anomaly_model": "IsolationForest [scikit-learn-1.9.1]",
+  "risk_model": "RandomForestClassifier (std of per-tree P(fail)) [scikit-learn-1.9.1]",
+  "anomaly_normalization": "empirical_cdf_on_calibration_split",
+  "uncertainty_normalization": "std_across_members / 0.5, clipped to [0, 1]",
+  "fitted_on_split": "calibration"
+ },
+ "model_fit": {
+  "split": "calibration",
+  "samples": 2501,
+  "failures": 257
+ }
+}

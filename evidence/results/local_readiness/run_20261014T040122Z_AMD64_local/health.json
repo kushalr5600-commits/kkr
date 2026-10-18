@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "runtime": "local",
+  "architecture": "AMD64",
+  "version": "0.1.0-prebuild",
+  "model_backend": "numpy",
+  "gate_threshold": "0.60",
+  "python": "3.12.10"
+}

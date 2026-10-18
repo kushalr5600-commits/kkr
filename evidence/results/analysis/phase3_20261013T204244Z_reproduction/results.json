@@ -1,0 +1,2604 @@
+{
+  "adoption_criteria": {
+    "A10_evidence_integrity": {
+      "pass": true
+    },
+    "A1_reproduce_within_tol": {
+      "all_within_tol": true,
+      "checks": [
+        {
+          "abs_diff": 0.0,
+          "budget": 0.01,
+          "ok": true,
+          "policy": "anomaly_only",
+          "published": 0.058823529411764705,
+          "recalculated": 0.058823529411764705
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.01,
+          "ok": true,
+          "policy": "BLACKBOX_frozen_gate",
+          "published": 0.0392156862745098,
+          "recalculated": 0.0392156862745098
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.01,
+          "ok": true,
+          "policy": "interaction_aware",
+          "published": 0.09803921568627451,
+          "recalculated": 0.09803921568627451
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.05,
+          "ok": true,
+          "policy": "anomaly_only",
+          "published": 0.3235294117647059,
+          "recalculated": 0.3235294117647059
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.05,
+          "ok": true,
+          "policy": "BLACKBOX_frozen_gate",
+          "published": 0.13725490196078433,
+          "recalculated": 0.13725490196078433
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.05,
+          "ok": true,
+          "policy": "interaction_aware",
+          "published": 0.4117647058823529,
+          "recalculated": 0.4117647058823529
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.1,
+          "ok": true,
+          "policy": "anomaly_only",
+          "published": 0.5294117647058824,
+          "recalculated": 0.5294117647058824
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.1,
+          "ok": true,
+          "policy": "BLACKBOX_frozen_gate",
+          "published": 0.19607843137254902,
+          "recalculated": 0.19607843137254902
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.1,
+          "ok": true,
+          "policy": "interaction_aware",
+          "published": 0.6274509803921569,
+          "recalculated": 0.6274509803921569
+        }
+      ],
+      "pass": true,
+      "tol": 1e-09
+    },
+    "A2_gains_all_primary_budgets": {
+      "pass": true
+    },
+    "A3_gains_every_seed_5_10pct": {
+      "pass": true,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        42
+      ]
+    },
+    "A4_no_leakage_static_audit": {
+      "evidence": "tests/unit/test_phase3_ranking.py::test_interaction_score_label_independent; phase2 methodology flags; extract_features has no outcome inputs",
+      "pass": true
+    },
+    "A5_scenario_not_worse_gt_005": {
+      "pass": true,
+      "violations": []
+    },
+    "A6_runtime_overhead_le_2x": {
+      "full_pipeline_over_gate_ratio": 1.425141515696313,
+      "gate_batch_ms_total": 171.92439999780618,
+      "gate_ms_per_tx": 0.17192439999780618,
+      "interaction_arith_ms_total": 0.040899998566601425,
+      "interaction_arith_over_gate_ratio": 0.00023789525260593217,
+      "interaction_extras_build_s": 0.2449756999994861,
+      "note": "interaction arithmetic-only vs gate batch; extras build reuses same extract_features the gate already needs in production scoring",
+      "pass": true
+    },
+    "A7_skipped_sim_honest": {
+      "note": "frozen threshold path untouched",
+      "pass": true
+    },
+    "A8_backend_contract": {
+      "cross_backend": {
+        "blocked_instructions": [
+          "python -m pip install scikit-learn==1.9.1",
+          "set BLACKBOX_MODEL_BACKEND=scikit-learn -> actually 'sklearn'",
+          "set BLACKBOX_MODEL_BACKEND=sklearn",
+          "python scripts/phase3_reproduce_and_robustness.py --skip-repro",
+          "compare primary budgets against docs/PHASE3_ADOPTION_CRITERIA.md A8"
+        ],
+        "no_substitution": "numpy results will NOT be reported as sklearn results",
+        "reason": "scikit-learn not installed in this environment; Phase 2/3 numbers are backend=numpy only",
+        "sklearn_installed": false,
+        "status": "BLOCKED"
+      },
+      "pass": false
+    },
+    "A9_human_authorization": {
+      "note": "cannot be satisfied inside Phase 3",
+      "pass": false
+    }
+  },
+  "adoption_verdict_pre_authorization": "BACKEND-CONDITIONAL",
+  "backend": "numpy",
+  "cluster_bootstrap": {
+    "by": "account_id",
+    "replicates": 500,
+    "results": {
+      "0.01": {
+        "interaction_minus_anomaly": {
+          "a_recall_mean": 0.09783706438656523,
+          "b_recall_mean": 0.059631930625504655,
+          "diff_ci95": [
+            -0.02958495145631068,
+            0.10783202557396103
+          ],
+          "frac_diff_le_zero": 0.154,
+          "mean_diff": 0.038205133761060585,
+          "n_replicates": 500,
+          "note": "accounts are clusters; fixed full-data ranking; validation only"
+        },
+        "interaction_minus_gate": {
+          "a_recall_mean": 0.09952434822296115,
+          "b_recall_mean": 0.03958275713287817,
+          "diff_ci95": [
+            -0.017665112665112656,
+            0.13373296067470813
+          ],
+          "frac_diff_le_zero": 0.068,
+          "mean_diff": 0.05994159109008298,
+          "n_replicates": 500,
+          "note": "accounts are clusters; fixed full-data ranking; validation only"
+        }
+      },
+      "0.05": {
+        "interaction_minus_anomaly": {
+          "a_recall_mean": 0.4128851354831305,
+          "b_recall_mean": 0.32612972961867276,
+          "diff_ci95": [
+            0.01771226415094345,
+            0.1594456379600224
+          ],
+          "frac_diff_le_zero": 0.01,
+          "mean_diff": 0.08675540586445779,
+          "n_replicates": 500,
+          "note": "accounts are clusters; fixed full-data ranking; validation only"
+        },
+        "interaction_minus_gate": {
+          "a_recall_mean": 0.4107101714774724,
+          "b_recall_mean": 0.13784707839731544,
+          "diff_ci95": [
+            0.1692204301075269,
+            0.36743095362167794
+          ],
+          "frac_diff_le_zero": 0.0,
+          "mean_diff": 0.2728630930801569,
+          "n_replicates": 500,
+          "note": "accounts are clusters; fixed full-data ranking; validation only"
+        }
+      },
+      "0.1": {
+        "interaction_minus_anomaly": {
+          "a_recall_mean": 0.625988788372237,
+          "b_recall_mean": 0.5286725175288234,
+          "diff_ci95": [
+            0.04142857142857146,
+            0.1617480383609416
+          ],
+          "frac_diff_le_zero": 0.002,
+          "mean_diff": 0.09731627084341361,
+          "n_replicates": 500,
+          "note": "accounts are clusters; fixed full-data ranking; validation only"
+        },
+        "interaction_minus_gate": {
+          "a_recall_mean": 0.6270478951780571,
+          "b_recall_mean": 0.19582316796075058,
+          "diff_ci95": [
+            0.32507080147267065,
+            0.5231309650053022
+          ],
+          "frac_diff_le_zero": 0.0,
+          "mean_diff": 0.43122472721730665,
+          "n_replicates": 500,
+          "note": "accounts are clusters; fixed full-data ranking; validation only"
+        }
+      }
+    }
+  },
+  "created_at_utc": "2026-10-13T20:43:08.372519+00:00",
+  "cross_backend": {
+    "blocked_instructions": [
+      "python -m pip install scikit-learn==1.9.1",
+      "set BLACKBOX_MODEL_BACKEND=scikit-learn -> actually 'sklearn'",
+      "set BLACKBOX_MODEL_BACKEND=sklearn",
+      "python scripts/phase3_reproduce_and_robustness.py --skip-repro",
+      "compare primary budgets against docs/PHASE3_ADOPTION_CRITERIA.md A8"
+    ],
+    "no_substitution": "numpy results will NOT be reported as sklearn results",
+    "reason": "scikit-learn not installed in this environment; Phase 2/3 numbers are backend=numpy only",
+    "sklearn_installed": false,
+    "status": "BLOCKED"
+  },
+  "elapsed_s": 23.98,
+  "experiment_command": "python scripts/phase3_reproduce_and_robustness.py --seeds 0,1,2,3,4,42 --bootstrap 500",
+  "frozen_constants_untouched": {
+    "scenarios": [
+      "3x_volume",
+      "fraud_spike",
+      "service_latency"
+    ],
+    "threshold": 0.6,
+    "weights": {
+      "anomaly": 0.25,
+      "dependency": 0.3,
+      "magnitude": 0.3,
+      "uncertainty": 0.15
+    }
+  },
+  "integrity_after": {
+    "dataset_sha256": "546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3",
+    "phase2_published_files": {
+      "README.md": "99dbe5102b4d350506d3ebe9505513d709c23dadbb554ae44a337fb1965f601a",
+      "results.json": "3e26d1271e37fcf707a1b33aee26649b8c5dcef0677f5da42e18bfd52fd2ff52"
+    },
+    "scenarios": [
+      "3x_volume",
+      "fraud_spike",
+      "service_latency"
+    ],
+    "threshold": 0.6,
+    "weights": {
+      "anomaly": 0.25,
+      "dependency": 0.3,
+      "magnitude": 0.3,
+      "uncertainty": 0.15
+    }
+  },
+  "integrity_before": {
+    "dataset_matches_manifest": true,
+    "dataset_sha256": "546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3",
+    "git_available": false,
+    "git_note": "Git unavailable \u2014 fingerprints below substitute for revision IDs",
+    "machine": "AMD64",
+    "phase2_published_files": {
+      "README.md": "99dbe5102b4d350506d3ebe9505513d709c23dadbb554ae44a337fb1965f601a",
+      "results.json": "3e26d1271e37fcf707a1b33aee26649b8c5dcef0677f5da42e18bfd52fd2ff52"
+    },
+    "python": "3.12.10",
+    "scenarios": [
+      "3x_volume",
+      "fraud_spike",
+      "service_latency"
+    ],
+    "threshold": 0.6,
+    "weights": {
+      "anomaly": 0.25,
+      "dependency": 0.3,
+      "magnitude": 0.3,
+      "uncertainty": 0.15
+    }
+  },
+  "linuxone_verified": false,
+  "machine": "AMD64",
+  "multi_seed": {
+    "anomaly_invariant_all": true,
+    "gate_invariant_all": false,
+    "interaction_invariant_all": true,
+    "labels_stable_all": true,
+    "rows": [
+      {
+        "anomaly_ranking_seed_invariant": true,
+        "backend": "numpy",
+        "budgets": {
+          "0.01": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.049019607843137254,
+              "failures_found": 5.0,
+              "false_negatives": 97.0,
+              "false_positives": 5.0,
+              "precision": 0.5,
+              "sim_runtime_ms_total": 1.0776999952213373,
+              "simulations": 10
+            },
+            "anomaly_only": {
+              "failure_recall": 0.058823529411764705,
+              "failures_found": 6.0,
+              "false_negatives": 96.0,
+              "false_positives": 4.0,
+              "precision": 0.6,
+              "sim_runtime_ms_total": 0.9794000034162309,
+              "simulations": 10
+            },
+            "budget": 0.01,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.1,
+                "anomaly_only": 0.05,
+                "interaction_aware": 0.35,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.1875,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.0625,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.09803921568627451,
+              "failures_found": 10.0,
+              "false_negatives": 92.0,
+              "false_positives": 0.0,
+              "precision": 1.0,
+              "sim_runtime_ms_total": 1.1337000032654032,
+              "simulations": 10
+            },
+            "k": 10,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.04950495049504951,
+                "anomaly_only": 0.0594059405940594,
+                "interaction_aware": 0.09900990099009901,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.07017543859649122,
+                "anomaly_only": 0.08771929824561403,
+                "interaction_aware": 0.17543859649122806,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.05128205128205128,
+                "anomaly_only": 0.02564102564102564,
+                "interaction_aware": 0.05128205128205128,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.05": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.13725490196078433,
+              "failures_found": 14.0,
+              "false_negatives": 88.0,
+              "false_positives": 36.0,
+              "precision": 0.28,
+              "sim_runtime_ms_total": 7.522300016717054,
+              "simulations": 50
+            },
+            "anomaly_only": {
+              "failure_recall": 0.3235294117647059,
+              "failures_found": 33.0,
+              "false_negatives": 69.0,
+              "false_positives": 17.0,
+              "precision": 0.66,
+              "sim_runtime_ms_total": 8.08990001314669,
+              "simulations": 50
+            },
+            "budget": 0.05,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.4,
+                "anomaly_only": 0.55,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.23529411764705882,
+                "interaction_aware": 0.29411764705882354,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 0.9375,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.5,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.4117647058823529,
+              "failures_found": 42.0,
+              "false_negatives": 60.0,
+              "false_positives": 8.0,
+              "precision": 0.84,
+              "sim_runtime_ms_total": 8.32670001545921,
+              "simulations": 50
+            },
+            "k": 50,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.13861386138613863,
+                "anomaly_only": 0.32673267326732675,
+                "interaction_aware": 0.4158415841584158,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.22807017543859648,
+                "anomaly_only": 0.47368421052631576,
+                "interaction_aware": 0.6491228070175439,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1282051282051282,
+                "anomaly_only": 0.20512820512820512,
+                "interaction_aware": 0.38461538461538464,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.1": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.19607843137254902,
+              "failures_found": 20.0,
+              "false_negatives": 82.0,
+              "false_positives": 80.0,
+              "precision": 0.2,
+              "sim_runtime_ms_total": 16.162500010977965,
+              "simulations": 100
+            },
+            "anomaly_only": {
+              "failure_recall": 0.5294117647058824,
+              "failures_found": 54.0,
+              "false_negatives": 48.0,
+              "false_positives": 46.0,
+              "precision": 0.54,
+              "sim_runtime_ms_total": 13.715400018554647,
+              "simulations": 100
+            },
+            "budget": 0.1,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.65,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.6470588235294118,
+                "interaction_aware": 0.7058823529411765,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.13333333333333333,
+                "interaction_aware": 0.13333333333333333,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.45,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.2,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.75,
+                "anomaly_only": 0.5,
+                "interaction_aware": 0.75,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.6274509803921569,
+              "failures_found": 64.0,
+              "false_negatives": 38.0,
+              "false_positives": 36.0,
+              "precision": 0.64,
+              "sim_runtime_ms_total": 14.212700032658176,
+              "simulations": 100
+            },
+            "k": 100,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.19801980198019803,
+                "anomaly_only": 0.5346534653465347,
+                "interaction_aware": 0.6336633663366337,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.3333333333333333,
+                "anomaly_only": 0.7017543859649122,
+                "interaction_aware": 0.7368421052631579,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1794871794871795,
+                "anomaly_only": 0.41025641025641024,
+                "interaction_aware": 0.6410256410256411,
+                "n_failures": 39.0
+              }
+            }
+          }
+        },
+        "elapsed_s": 2.505,
+        "gate_score_seed_invariant": false,
+        "interaction_ranking_seed_invariant": true,
+        "labels_stable": true,
+        "seed": 0
+      },
+      {
+        "anomaly_ranking_seed_invariant": true,
+        "backend": "numpy",
+        "budgets": {
+          "0.01": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.0392156862745098,
+              "failures_found": 4.0,
+              "false_negatives": 98.0,
+              "false_positives": 6.0,
+              "precision": 0.4,
+              "sim_runtime_ms_total": 1.0560000082477927,
+              "simulations": 10
+            },
+            "anomaly_only": {
+              "failure_recall": 0.058823529411764705,
+              "failures_found": 6.0,
+              "false_negatives": 96.0,
+              "false_positives": 4.0,
+              "precision": 0.6,
+              "sim_runtime_ms_total": 0.9312999973190017,
+              "simulations": 10
+            },
+            "budget": 0.01,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.05,
+                "anomaly_only": 0.05,
+                "interaction_aware": 0.35,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.1875,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.0625,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.09803921568627451,
+              "failures_found": 10.0,
+              "false_negatives": 92.0,
+              "false_positives": 0.0,
+              "precision": 1.0,
+              "sim_runtime_ms_total": 1.5634999945177697,
+              "simulations": 10
+            },
+            "k": 10,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.039603960396039604,
+                "anomaly_only": 0.0594059405940594,
+                "interaction_aware": 0.09900990099009901,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.05263157894736842,
+                "anomaly_only": 0.08771929824561403,
+                "interaction_aware": 0.17543859649122806,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.05128205128205128,
+                "anomaly_only": 0.02564102564102564,
+                "interaction_aware": 0.05128205128205128,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.05": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.13725490196078433,
+              "failures_found": 14.0,
+              "false_negatives": 88.0,
+              "false_positives": 36.0,
+              "precision": 0.28,
+              "sim_runtime_ms_total": 6.528200017783092,
+              "simulations": 50
+            },
+            "anomaly_only": {
+              "failure_recall": 0.3235294117647059,
+              "failures_found": 33.0,
+              "false_negatives": 69.0,
+              "false_positives": 17.0,
+              "precision": 0.66,
+              "sim_runtime_ms_total": 5.495699999300996,
+              "simulations": 50
+            },
+            "budget": 0.05,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.4,
+                "anomaly_only": 0.55,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.23529411764705882,
+                "interaction_aware": 0.29411764705882354,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 0.9375,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.5,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.4117647058823529,
+              "failures_found": 42.0,
+              "false_negatives": 60.0,
+              "false_positives": 8.0,
+              "precision": 0.84,
+              "sim_runtime_ms_total": 6.38569999136962,
+              "simulations": 50
+            },
+            "k": 50,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.13861386138613863,
+                "anomaly_only": 0.32673267326732675,
+                "interaction_aware": 0.4158415841584158,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.22807017543859648,
+                "anomaly_only": 0.47368421052631576,
+                "interaction_aware": 0.6491228070175439,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1282051282051282,
+                "anomaly_only": 0.20512820512820512,
+                "interaction_aware": 0.38461538461538464,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.1": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.19607843137254902,
+              "failures_found": 20.0,
+              "false_negatives": 82.0,
+              "false_positives": 80.0,
+              "precision": 0.2,
+              "sim_runtime_ms_total": 11.872900002344977,
+              "simulations": 100
+            },
+            "anomaly_only": {
+              "failure_recall": 0.5294117647058824,
+              "failures_found": 54.0,
+              "false_negatives": 48.0,
+              "false_positives": 46.0,
+              "precision": 0.54,
+              "sim_runtime_ms_total": 11.372800017852569,
+              "simulations": 100
+            },
+            "budget": 0.1,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.65,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.6470588235294118,
+                "interaction_aware": 0.7058823529411765,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.13333333333333333,
+                "interaction_aware": 0.13333333333333333,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.45,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.2,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.75,
+                "anomaly_only": 0.5,
+                "interaction_aware": 0.75,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.6274509803921569,
+              "failures_found": 64.0,
+              "false_negatives": 38.0,
+              "false_positives": 36.0,
+              "precision": 0.64,
+              "sim_runtime_ms_total": 13.264400000480236,
+              "simulations": 100
+            },
+            "k": 100,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.19801980198019803,
+                "anomaly_only": 0.5346534653465347,
+                "interaction_aware": 0.6336633663366337,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.3333333333333333,
+                "anomaly_only": 0.7017543859649122,
+                "interaction_aware": 0.7368421052631579,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1794871794871795,
+                "anomaly_only": 0.41025641025641024,
+                "interaction_aware": 0.6410256410256411,
+                "n_failures": 39.0
+              }
+            }
+          }
+        },
+        "elapsed_s": 2.559,
+        "gate_score_seed_invariant": false,
+        "interaction_ranking_seed_invariant": true,
+        "labels_stable": true,
+        "seed": 1
+      },
+      {
+        "anomaly_ranking_seed_invariant": true,
+        "backend": "numpy",
+        "budgets": {
+          "0.01": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.049019607843137254,
+              "failures_found": 5.0,
+              "false_negatives": 97.0,
+              "false_positives": 5.0,
+              "precision": 0.5,
+              "sim_runtime_ms_total": 1.676499996392522,
+              "simulations": 10
+            },
+            "anomaly_only": {
+              "failure_recall": 0.058823529411764705,
+              "failures_found": 6.0,
+              "false_negatives": 96.0,
+              "false_positives": 4.0,
+              "precision": 0.6,
+              "sim_runtime_ms_total": 1.701399996818509,
+              "simulations": 10
+            },
+            "budget": 0.01,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.1,
+                "anomaly_only": 0.05,
+                "interaction_aware": 0.35,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.1875,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.0625,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.09803921568627451,
+              "failures_found": 10.0,
+              "false_negatives": 92.0,
+              "false_positives": 0.0,
+              "precision": 1.0,
+              "sim_runtime_ms_total": 1.1315999981889036,
+              "simulations": 10
+            },
+            "k": 10,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.04950495049504951,
+                "anomaly_only": 0.0594059405940594,
+                "interaction_aware": 0.09900990099009901,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.07017543859649122,
+                "anomaly_only": 0.08771929824561403,
+                "interaction_aware": 0.17543859649122806,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.05128205128205128,
+                "anomaly_only": 0.02564102564102564,
+                "interaction_aware": 0.05128205128205128,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.05": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.13725490196078433,
+              "failures_found": 14.0,
+              "false_negatives": 88.0,
+              "false_positives": 36.0,
+              "precision": 0.28,
+              "sim_runtime_ms_total": 7.109299986041151,
+              "simulations": 50
+            },
+            "anomaly_only": {
+              "failure_recall": 0.3235294117647059,
+              "failures_found": 33.0,
+              "false_negatives": 69.0,
+              "false_positives": 17.0,
+              "precision": 0.66,
+              "sim_runtime_ms_total": 9.74819999828469,
+              "simulations": 50
+            },
+            "budget": 0.05,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.4,
+                "anomaly_only": 0.55,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.23529411764705882,
+                "interaction_aware": 0.29411764705882354,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 0.9375,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.5,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.4117647058823529,
+              "failures_found": 42.0,
+              "false_negatives": 60.0,
+              "false_positives": 8.0,
+              "precision": 0.84,
+              "sim_runtime_ms_total": 10.263499989378033,
+              "simulations": 50
+            },
+            "k": 50,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.13861386138613863,
+                "anomaly_only": 0.32673267326732675,
+                "interaction_aware": 0.4158415841584158,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.22807017543859648,
+                "anomaly_only": 0.47368421052631576,
+                "interaction_aware": 0.6491228070175439,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1282051282051282,
+                "anomaly_only": 0.20512820512820512,
+                "interaction_aware": 0.38461538461538464,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.1": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.19607843137254902,
+              "failures_found": 20.0,
+              "false_negatives": 82.0,
+              "false_positives": 80.0,
+              "precision": 0.2,
+              "sim_runtime_ms_total": 13.126699981512502,
+              "simulations": 100
+            },
+            "anomaly_only": {
+              "failure_recall": 0.5294117647058824,
+              "failures_found": 54.0,
+              "false_negatives": 48.0,
+              "false_positives": 46.0,
+              "precision": 0.54,
+              "sim_runtime_ms_total": 16.700999989552656,
+              "simulations": 100
+            },
+            "budget": 0.1,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.65,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.6470588235294118,
+                "interaction_aware": 0.7058823529411765,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.13333333333333333,
+                "interaction_aware": 0.13333333333333333,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.45,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.2,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.75,
+                "anomaly_only": 0.5,
+                "interaction_aware": 0.75,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.6274509803921569,
+              "failures_found": 64.0,
+              "false_negatives": 38.0,
+              "false_positives": 36.0,
+              "precision": 0.64,
+              "sim_runtime_ms_total": 17.13969996853848,
+              "simulations": 100
+            },
+            "k": 100,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.19801980198019803,
+                "anomaly_only": 0.5346534653465347,
+                "interaction_aware": 0.6336633663366337,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.3333333333333333,
+                "anomaly_only": 0.7017543859649122,
+                "interaction_aware": 0.7368421052631579,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1794871794871795,
+                "anomaly_only": 0.41025641025641024,
+                "interaction_aware": 0.6410256410256411,
+                "n_failures": 39.0
+              }
+            }
+          }
+        },
+        "elapsed_s": 2.463,
+        "gate_score_seed_invariant": false,
+        "interaction_ranking_seed_invariant": true,
+        "labels_stable": true,
+        "seed": 2
+      },
+      {
+        "anomaly_ranking_seed_invariant": true,
+        "backend": "numpy",
+        "budgets": {
+          "0.01": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.0392156862745098,
+              "failures_found": 4.0,
+              "false_negatives": 98.0,
+              "false_positives": 6.0,
+              "precision": 0.4,
+              "sim_runtime_ms_total": 2.392199996393174,
+              "simulations": 10
+            },
+            "anomaly_only": {
+              "failure_recall": 0.058823529411764705,
+              "failures_found": 6.0,
+              "false_negatives": 96.0,
+              "false_positives": 4.0,
+              "precision": 0.6,
+              "sim_runtime_ms_total": 0.9858999983407557,
+              "simulations": 10
+            },
+            "budget": 0.01,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.05,
+                "anomaly_only": 0.05,
+                "interaction_aware": 0.35,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.1875,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.0625,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.09803921568627451,
+              "failures_found": 10.0,
+              "false_negatives": 92.0,
+              "false_positives": 0.0,
+              "precision": 1.0,
+              "sim_runtime_ms_total": 1.454699995520059,
+              "simulations": 10
+            },
+            "k": 10,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.039603960396039604,
+                "anomaly_only": 0.0594059405940594,
+                "interaction_aware": 0.09900990099009901,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.05263157894736842,
+                "anomaly_only": 0.08771929824561403,
+                "interaction_aware": 0.17543859649122806,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.05128205128205128,
+                "anomaly_only": 0.02564102564102564,
+                "interaction_aware": 0.05128205128205128,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.05": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.13725490196078433,
+              "failures_found": 14.0,
+              "false_negatives": 88.0,
+              "false_positives": 36.0,
+              "precision": 0.28,
+              "sim_runtime_ms_total": 11.668600000120932,
+              "simulations": 50
+            },
+            "anomaly_only": {
+              "failure_recall": 0.3235294117647059,
+              "failures_found": 33.0,
+              "false_negatives": 69.0,
+              "false_positives": 17.0,
+              "precision": 0.66,
+              "sim_runtime_ms_total": 6.640699997660704,
+              "simulations": 50
+            },
+            "budget": 0.05,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.4,
+                "anomaly_only": 0.55,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.23529411764705882,
+                "interaction_aware": 0.29411764705882354,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 0.9375,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.5,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.4117647058823529,
+              "failures_found": 42.0,
+              "false_negatives": 60.0,
+              "false_positives": 8.0,
+              "precision": 0.84,
+              "sim_runtime_ms_total": 8.148600005370099,
+              "simulations": 50
+            },
+            "k": 50,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.13861386138613863,
+                "anomaly_only": 0.32673267326732675,
+                "interaction_aware": 0.4158415841584158,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.22807017543859648,
+                "anomaly_only": 0.47368421052631576,
+                "interaction_aware": 0.6491228070175439,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1282051282051282,
+                "anomaly_only": 0.20512820512820512,
+                "interaction_aware": 0.38461538461538464,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.1": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.18627450980392157,
+              "failures_found": 19.0,
+              "false_negatives": 83.0,
+              "false_positives": 81.0,
+              "precision": 0.19,
+              "sim_runtime_ms_total": 16.408199986472027,
+              "simulations": 100
+            },
+            "anomaly_only": {
+              "failure_recall": 0.5294117647058824,
+              "failures_found": 54.0,
+              "false_negatives": 48.0,
+              "false_positives": 46.0,
+              "precision": 0.54,
+              "sim_runtime_ms_total": 14.42930000848719,
+              "simulations": 100
+            },
+            "budget": 0.1,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.6,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.6470588235294118,
+                "interaction_aware": 0.7058823529411765,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.13333333333333333,
+                "interaction_aware": 0.13333333333333333,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.45,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.2,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.75,
+                "anomaly_only": 0.5,
+                "interaction_aware": 0.75,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.6274509803921569,
+              "failures_found": 64.0,
+              "false_negatives": 38.0,
+              "false_positives": 36.0,
+              "precision": 0.64,
+              "sim_runtime_ms_total": 16.260100004728884,
+              "simulations": 100
+            },
+            "k": 100,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.18811881188118812,
+                "anomaly_only": 0.5346534653465347,
+                "interaction_aware": 0.6336633663366337,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.3157894736842105,
+                "anomaly_only": 0.7017543859649122,
+                "interaction_aware": 0.7368421052631579,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.15384615384615385,
+                "anomaly_only": 0.41025641025641024,
+                "interaction_aware": 0.6410256410256411,
+                "n_failures": 39.0
+              }
+            }
+          }
+        },
+        "elapsed_s": 2.547,
+        "gate_score_seed_invariant": false,
+        "interaction_ranking_seed_invariant": true,
+        "labels_stable": true,
+        "seed": 3
+      },
+      {
+        "anomaly_ranking_seed_invariant": true,
+        "backend": "numpy",
+        "budgets": {
+          "0.01": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.0392156862745098,
+              "failures_found": 4.0,
+              "false_negatives": 98.0,
+              "false_positives": 6.0,
+              "precision": 0.4,
+              "sim_runtime_ms_total": 1.0408000016468577,
+              "simulations": 10
+            },
+            "anomaly_only": {
+              "failure_recall": 0.058823529411764705,
+              "failures_found": 6.0,
+              "false_negatives": 96.0,
+              "false_positives": 4.0,
+              "precision": 0.6,
+              "sim_runtime_ms_total": 1.9272999998065643,
+              "simulations": 10
+            },
+            "budget": 0.01,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.05,
+                "anomaly_only": 0.05,
+                "interaction_aware": 0.35,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.1875,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.0625,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.09803921568627451,
+              "failures_found": 10.0,
+              "false_negatives": 92.0,
+              "false_positives": 0.0,
+              "precision": 1.0,
+              "sim_runtime_ms_total": 2.691800011234591,
+              "simulations": 10
+            },
+            "k": 10,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.039603960396039604,
+                "anomaly_only": 0.0594059405940594,
+                "interaction_aware": 0.09900990099009901,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.05263157894736842,
+                "anomaly_only": 0.08771929824561403,
+                "interaction_aware": 0.17543859649122806,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.05128205128205128,
+                "anomaly_only": 0.02564102564102564,
+                "interaction_aware": 0.05128205128205128,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.05": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.13725490196078433,
+              "failures_found": 14.0,
+              "false_negatives": 88.0,
+              "false_positives": 36.0,
+              "precision": 0.28,
+              "sim_runtime_ms_total": 6.82190001316485,
+              "simulations": 50
+            },
+            "anomaly_only": {
+              "failure_recall": 0.3235294117647059,
+              "failures_found": 33.0,
+              "false_negatives": 69.0,
+              "false_positives": 17.0,
+              "precision": 0.66,
+              "sim_runtime_ms_total": 7.127700006094528,
+              "simulations": 50
+            },
+            "budget": 0.05,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.4,
+                "anomaly_only": 0.55,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.23529411764705882,
+                "interaction_aware": 0.29411764705882354,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 0.9375,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.5,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.4117647058823529,
+              "failures_found": 42.0,
+              "false_negatives": 60.0,
+              "false_positives": 8.0,
+              "precision": 0.84,
+              "sim_runtime_ms_total": 7.702000002609566,
+              "simulations": 50
+            },
+            "k": 50,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.13861386138613863,
+                "anomaly_only": 0.32673267326732675,
+                "interaction_aware": 0.4158415841584158,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.22807017543859648,
+                "anomaly_only": 0.47368421052631576,
+                "interaction_aware": 0.6491228070175439,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1282051282051282,
+                "anomaly_only": 0.20512820512820512,
+                "interaction_aware": 0.38461538461538464,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.1": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.18627450980392157,
+              "failures_found": 19.0,
+              "false_negatives": 83.0,
+              "false_positives": 81.0,
+              "precision": 0.19,
+              "sim_runtime_ms_total": 14.272200009145308,
+              "simulations": 100
+            },
+            "anomaly_only": {
+              "failure_recall": 0.5294117647058824,
+              "failures_found": 54.0,
+              "false_negatives": 48.0,
+              "false_positives": 46.0,
+              "precision": 0.54,
+              "sim_runtime_ms_total": 12.707900004897965,
+              "simulations": 100
+            },
+            "budget": 0.1,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.6,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.6470588235294118,
+                "interaction_aware": 0.7058823529411765,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.13333333333333333,
+                "interaction_aware": 0.13333333333333333,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.45,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.2,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.75,
+                "anomaly_only": 0.5,
+                "interaction_aware": 0.75,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.6274509803921569,
+              "failures_found": 64.0,
+              "false_negatives": 38.0,
+              "false_positives": 36.0,
+              "precision": 0.64,
+              "sim_runtime_ms_total": 13.760199999524048,
+              "simulations": 100
+            },
+            "k": 100,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.18811881188118812,
+                "anomaly_only": 0.5346534653465347,
+                "interaction_aware": 0.6336633663366337,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.3157894736842105,
+                "anomaly_only": 0.7017543859649122,
+                "interaction_aware": 0.7368421052631579,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.15384615384615385,
+                "anomaly_only": 0.41025641025641024,
+                "interaction_aware": 0.6410256410256411,
+                "n_failures": 39.0
+              }
+            }
+          }
+        },
+        "elapsed_s": 2.68,
+        "gate_score_seed_invariant": false,
+        "interaction_ranking_seed_invariant": true,
+        "labels_stable": true,
+        "seed": 4
+      },
+      {
+        "anomaly_ranking_seed_invariant": true,
+        "backend": "numpy",
+        "budgets": {
+          "0.01": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.0392156862745098,
+              "failures_found": 4.0,
+              "false_negatives": 98.0,
+              "false_positives": 6.0,
+              "precision": 0.4,
+              "sim_runtime_ms_total": 3.9092000042728614,
+              "simulations": 10
+            },
+            "anomaly_only": {
+              "failure_recall": 0.058823529411764705,
+              "failures_found": 6.0,
+              "false_negatives": 96.0,
+              "false_positives": 4.0,
+              "precision": 0.6,
+              "sim_runtime_ms_total": 1.7117000024882145,
+              "simulations": 10
+            },
+            "budget": 0.01,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.05,
+                "anomaly_only": 0.05,
+                "interaction_aware": 0.35,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.1875,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.0625,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.09803921568627451,
+              "failures_found": 10.0,
+              "false_negatives": 92.0,
+              "false_positives": 0.0,
+              "precision": 1.0,
+              "sim_runtime_ms_total": 1.3305999964359216,
+              "simulations": 10
+            },
+            "k": 10,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.039603960396039604,
+                "anomaly_only": 0.0594059405940594,
+                "interaction_aware": 0.09900990099009901,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.05263157894736842,
+                "anomaly_only": 0.08771929824561403,
+                "interaction_aware": 0.17543859649122806,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.05128205128205128,
+                "anomaly_only": 0.02564102564102564,
+                "interaction_aware": 0.05128205128205128,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.05": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.13725490196078433,
+              "failures_found": 14.0,
+              "false_negatives": 88.0,
+              "false_positives": 36.0,
+              "precision": 0.28,
+              "sim_runtime_ms_total": 8.885500010364922,
+              "simulations": 50
+            },
+            "anomaly_only": {
+              "failure_recall": 0.3235294117647059,
+              "failures_found": 33.0,
+              "false_negatives": 69.0,
+              "false_positives": 17.0,
+              "precision": 0.66,
+              "sim_runtime_ms_total": 6.6921999932674225,
+              "simulations": 50
+            },
+            "budget": 0.05,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.4,
+                "anomaly_only": 0.55,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.23529411764705882,
+                "interaction_aware": 0.29411764705882354,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.0,
+                "interaction_aware": 0.0,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.1,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 0.9375,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.5,
+                "anomaly_only": 0.25,
+                "interaction_aware": 0.25,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.4117647058823529,
+              "failures_found": 42.0,
+              "false_negatives": 60.0,
+              "false_positives": 8.0,
+              "precision": 0.84,
+              "sim_runtime_ms_total": 7.520000002841698,
+              "simulations": 50
+            },
+            "k": 50,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.13861386138613863,
+                "anomaly_only": 0.32673267326732675,
+                "interaction_aware": 0.4158415841584158,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.22807017543859648,
+                "anomaly_only": 0.47368421052631576,
+                "interaction_aware": 0.6491228070175439,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1282051282051282,
+                "anomaly_only": 0.20512820512820512,
+                "interaction_aware": 0.38461538461538464,
+                "n_failures": 39.0
+              }
+            }
+          },
+          "0.1": {
+            "BLACKBOX_frozen_gate": {
+              "failure_recall": 0.19607843137254902,
+              "failures_found": 20.0,
+              "false_negatives": 82.0,
+              "false_positives": 80.0,
+              "precision": 0.2,
+              "sim_runtime_ms_total": 13.956299993878929,
+              "simulations": 100
+            },
+            "anomaly_only": {
+              "failure_recall": 0.5294117647058824,
+              "failures_found": 54.0,
+              "false_negatives": 48.0,
+              "false_positives": 46.0,
+              "precision": 0.54,
+              "sim_runtime_ms_total": 12.126700006774627,
+              "simulations": 100
+            },
+            "budget": 0.1,
+            "category_recall": {
+              "correlated_anomalies": {
+                "BLACKBOX_frozen_gate": 0.65,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 20.0
+              },
+              "dependency_chain_failures": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.6470588235294118,
+                "interaction_aware": 0.7058823529411765,
+                "n_failures": 17.0
+              },
+              "jointly_dangerous": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.13333333333333333,
+                "interaction_aware": 0.13333333333333333,
+                "n_failures": 15.0
+              },
+              "low_value_high_blast_radius": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.45,
+                "n_failures": 20.0
+              },
+              "normal": {
+                "BLACKBOX_frozen_gate": 0.0,
+                "anomaly_only": 0.1,
+                "interaction_aware": 0.2,
+                "n_failures": 10.0
+              },
+              "obvious_single_signal_danger": {
+                "BLACKBOX_frozen_gate": 0.25,
+                "anomaly_only": 1.0,
+                "interaction_aware": 1.0,
+                "n_failures": 16.0
+              },
+              "unusual_but_harmless": {
+                "BLACKBOX_frozen_gate": 0.75,
+                "anomaly_only": 0.5,
+                "interaction_aware": 0.75,
+                "n_failures": 4.0
+              }
+            },
+            "interaction_aware": {
+              "failure_recall": 0.6274509803921569,
+              "failures_found": 64.0,
+              "false_negatives": 38.0,
+              "false_positives": 36.0,
+              "precision": 0.64,
+              "sim_runtime_ms_total": 16.792100028396817,
+              "simulations": 100
+            },
+            "k": 100,
+            "n": 1000,
+            "n_failures": 102,
+            "scenario_recall": {
+              "3x_volume": {
+                "BLACKBOX_frozen_gate": 0.19801980198019803,
+                "anomaly_only": 0.5346534653465347,
+                "interaction_aware": 0.6336633663366337,
+                "n_failures": 101.0
+              },
+              "fraud_spike": {
+                "BLACKBOX_frozen_gate": 0.3333333333333333,
+                "anomaly_only": 0.7017543859649122,
+                "interaction_aware": 0.7368421052631579,
+                "n_failures": 57.0
+              },
+              "service_latency": {
+                "BLACKBOX_frozen_gate": 0.1794871794871795,
+                "anomaly_only": 0.41025641025641024,
+                "interaction_aware": 0.6410256410256411,
+                "n_failures": 39.0
+              }
+            }
+          }
+        },
+        "elapsed_s": 2.536,
+        "gate_score_seed_invariant": true,
+        "interaction_ranking_seed_invariant": true,
+        "labels_stable": true,
+        "seed": 42
+      }
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      42
+    ],
+    "variation_note": "On numpy backend the anomaly model is deterministic (seed unused), so anomaly_only and interaction_aware rankings do not depend on model-fit seed; BLACKBOX gate varies only through U (bagged logistic bootstrap). Random-policy variation is ranking-seed only."
+  },
+  "phase2_reproduction": {
+    "raw_recalc_vs_published": {
+      "all_within_tol": true,
+      "checks": [
+        {
+          "abs_diff": 0.0,
+          "budget": 0.01,
+          "ok": true,
+          "policy": "anomaly_only",
+          "published": 0.058823529411764705,
+          "recalculated": 0.058823529411764705
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.01,
+          "ok": true,
+          "policy": "BLACKBOX_frozen_gate",
+          "published": 0.0392156862745098,
+          "recalculated": 0.0392156862745098
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.01,
+          "ok": true,
+          "policy": "interaction_aware",
+          "published": 0.09803921568627451,
+          "recalculated": 0.09803921568627451
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.05,
+          "ok": true,
+          "policy": "anomaly_only",
+          "published": 0.3235294117647059,
+          "recalculated": 0.3235294117647059
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.05,
+          "ok": true,
+          "policy": "BLACKBOX_frozen_gate",
+          "published": 0.13725490196078433,
+          "recalculated": 0.13725490196078433
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.05,
+          "ok": true,
+          "policy": "interaction_aware",
+          "published": 0.4117647058823529,
+          "recalculated": 0.4117647058823529
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.1,
+          "ok": true,
+          "policy": "anomaly_only",
+          "published": 0.5294117647058824,
+          "recalculated": 0.5294117647058824
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.1,
+          "ok": true,
+          "policy": "BLACKBOX_frozen_gate",
+          "published": 0.19607843137254902,
+          "recalculated": 0.19607843137254902
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": 0.1,
+          "ok": true,
+          "policy": "interaction_aware",
+          "published": 0.6274509803921569,
+          "recalculated": 0.6274509803921569
+        }
+      ],
+      "tol": 1e-09
+    },
+    "rerun_bundle": "evidence\\results\\analysis\\phase2_20261013T204248Z_numpy_validation",
+    "rerun_elapsed_s": 4.2,
+    "rerun_exit_code": 0,
+    "rerun_vs_published": {
+      "all_within_tol": true,
+      "checks": [
+        {
+          "abs_diff": 0.0,
+          "budget": "0.01",
+          "policy": "anomaly_only"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.01",
+          "policy": "BLACKBOX_frozen_gate"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.01",
+          "policy": "interaction_aware"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.05",
+          "policy": "anomaly_only"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.05",
+          "policy": "BLACKBOX_frozen_gate"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.05",
+          "policy": "interaction_aware"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.1",
+          "policy": "anomaly_only"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.1",
+          "policy": "BLACKBOX_frozen_gate"
+        },
+        {
+          "abs_diff": 0.0,
+          "budget": "0.1",
+          "policy": "interaction_aware"
+        }
+      ],
+      "rerun_bundle": "evidence\\results\\analysis\\phase2_20261013T204248Z_numpy_validation",
+      "tol": 1e-09
+    }
+  },
+  "primary_budget_tables": {
+    "0.01": {
+      "BLACKBOX_frozen_gate": {
+        "failure_recall": 0.0392156862745098,
+        "failures_found": 4.0,
+        "false_negatives": 98.0,
+        "false_positives": 6.0,
+        "precision": 0.4,
+        "sim_runtime_ms_total": 1.3561999985540751,
+        "simulations": 10
+      },
+      "anomaly_only": {
+        "failure_recall": 0.058823529411764705,
+        "failures_found": 6.0,
+        "false_negatives": 96.0,
+        "false_positives": 4.0,
+        "precision": 0.6,
+        "sim_runtime_ms_total": 1.7205999974976294,
+        "simulations": 10
+      },
+      "budget": 0.01,
+      "category_recall": {
+        "correlated_anomalies": {
+          "BLACKBOX_frozen_gate": 0.05,
+          "anomaly_only": 0.05,
+          "interaction_aware": 0.35,
+          "n_failures": 20.0
+        },
+        "dependency_chain_failures": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.0,
+          "interaction_aware": 0.0,
+          "n_failures": 17.0
+        },
+        "jointly_dangerous": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.0,
+          "interaction_aware": 0.0,
+          "n_failures": 15.0
+        },
+        "low_value_high_blast_radius": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.0,
+          "interaction_aware": 0.0,
+          "n_failures": 20.0
+        },
+        "normal": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.0,
+          "interaction_aware": 0.1,
+          "n_failures": 10.0
+        },
+        "obvious_single_signal_danger": {
+          "BLACKBOX_frozen_gate": 0.1875,
+          "anomaly_only": 0.25,
+          "interaction_aware": 0.0625,
+          "n_failures": 16.0
+        },
+        "unusual_but_harmless": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.25,
+          "interaction_aware": 0.25,
+          "n_failures": 4.0
+        }
+      },
+      "interaction_aware": {
+        "failure_recall": 0.09803921568627451,
+        "failures_found": 10.0,
+        "false_negatives": 92.0,
+        "false_positives": 0.0,
+        "precision": 1.0,
+        "sim_runtime_ms_total": 2.3509000020567328,
+        "simulations": 10
+      },
+      "k": 10,
+      "n": 1000,
+      "n_failures": 102,
+      "scenario_recall": {
+        "3x_volume": {
+          "BLACKBOX_frozen_gate": 0.039603960396039604,
+          "anomaly_only": 0.0594059405940594,
+          "interaction_aware": 0.09900990099009901,
+          "n_failures": 101.0
+        },
+        "fraud_spike": {
+          "BLACKBOX_frozen_gate": 0.05263157894736842,
+          "anomaly_only": 0.08771929824561403,
+          "interaction_aware": 0.17543859649122806,
+          "n_failures": 57.0
+        },
+        "service_latency": {
+          "BLACKBOX_frozen_gate": 0.05128205128205128,
+          "anomaly_only": 0.02564102564102564,
+          "interaction_aware": 0.05128205128205128,
+          "n_failures": 39.0
+        }
+      }
+    },
+    "0.05": {
+      "BLACKBOX_frozen_gate": {
+        "failure_recall": 0.13725490196078433,
+        "failures_found": 14.0,
+        "false_negatives": 88.0,
+        "false_positives": 36.0,
+        "precision": 0.28,
+        "sim_runtime_ms_total": 9.586700001818826,
+        "simulations": 50
+      },
+      "anomaly_only": {
+        "failure_recall": 0.3235294117647059,
+        "failures_found": 33.0,
+        "false_negatives": 69.0,
+        "false_positives": 17.0,
+        "precision": 0.66,
+        "sim_runtime_ms_total": 8.17770000139717,
+        "simulations": 50
+      },
+      "budget": 0.05,
+      "category_recall": {
+        "correlated_anomalies": {
+          "BLACKBOX_frozen_gate": 0.4,
+          "anomaly_only": 0.55,
+          "interaction_aware": 1.0,
+          "n_failures": 20.0
+        },
+        "dependency_chain_failures": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.23529411764705882,
+          "interaction_aware": 0.29411764705882354,
+          "n_failures": 17.0
+        },
+        "jointly_dangerous": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.0,
+          "interaction_aware": 0.0,
+          "n_failures": 15.0
+        },
+        "low_value_high_blast_radius": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.0,
+          "interaction_aware": 0.0,
+          "n_failures": 20.0
+        },
+        "normal": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.1,
+          "interaction_aware": 0.1,
+          "n_failures": 10.0
+        },
+        "obvious_single_signal_danger": {
+          "BLACKBOX_frozen_gate": 0.25,
+          "anomaly_only": 1.0,
+          "interaction_aware": 0.9375,
+          "n_failures": 16.0
+        },
+        "unusual_but_harmless": {
+          "BLACKBOX_frozen_gate": 0.5,
+          "anomaly_only": 0.25,
+          "interaction_aware": 0.25,
+          "n_failures": 4.0
+        }
+      },
+      "interaction_aware": {
+        "failure_recall": 0.4117647058823529,
+        "failures_found": 42.0,
+        "false_negatives": 60.0,
+        "false_positives": 8.0,
+        "precision": 0.84,
+        "sim_runtime_ms_total": 7.9454000006080605,
+        "simulations": 50
+      },
+      "k": 50,
+      "n": 1000,
+      "n_failures": 102,
+      "scenario_recall": {
+        "3x_volume": {
+          "BLACKBOX_frozen_gate": 0.13861386138613863,
+          "anomaly_only": 0.32673267326732675,
+          "interaction_aware": 0.4158415841584158,
+          "n_failures": 101.0
+        },
+        "fraud_spike": {
+          "BLACKBOX_frozen_gate": 0.22807017543859648,
+          "anomaly_only": 0.47368421052631576,
+          "interaction_aware": 0.6491228070175439,
+          "n_failures": 57.0
+        },
+        "service_latency": {
+          "BLACKBOX_frozen_gate": 0.1282051282051282,
+          "anomaly_only": 0.20512820512820512,
+          "interaction_aware": 0.38461538461538464,
+          "n_failures": 39.0
+        }
+      }
+    },
+    "0.1": {
+      "BLACKBOX_frozen_gate": {
+        "failure_recall": 0.19607843137254902,
+        "failures_found": 20.0,
+        "false_negatives": 82.0,
+        "false_positives": 80.0,
+        "precision": 0.2,
+        "sim_runtime_ms_total": 17.83520001845318,
+        "simulations": 100
+      },
+      "anomaly_only": {
+        "failure_recall": 0.5294117647058824,
+        "failures_found": 54.0,
+        "false_negatives": 48.0,
+        "false_positives": 46.0,
+        "precision": 0.54,
+        "sim_runtime_ms_total": 17.041000013705343,
+        "simulations": 100
+      },
+      "budget": 0.1,
+      "category_recall": {
+        "correlated_anomalies": {
+          "BLACKBOX_frozen_gate": 0.65,
+          "anomaly_only": 1.0,
+          "interaction_aware": 1.0,
+          "n_failures": 20.0
+        },
+        "dependency_chain_failures": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.6470588235294118,
+          "interaction_aware": 0.7058823529411765,
+          "n_failures": 17.0
+        },
+        "jointly_dangerous": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.13333333333333333,
+          "interaction_aware": 0.13333333333333333,
+          "n_failures": 15.0
+        },
+        "low_value_high_blast_radius": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.1,
+          "interaction_aware": 0.45,
+          "n_failures": 20.0
+        },
+        "normal": {
+          "BLACKBOX_frozen_gate": 0.0,
+          "anomaly_only": 0.1,
+          "interaction_aware": 0.2,
+          "n_failures": 10.0
+        },
+        "obvious_single_signal_danger": {
+          "BLACKBOX_frozen_gate": 0.25,
+          "anomaly_only": 1.0,
+          "interaction_aware": 1.0,
+          "n_failures": 16.0
+        },
+        "unusual_but_harmless": {
+          "BLACKBOX_frozen_gate": 0.75,
+          "anomaly_only": 0.5,
+          "interaction_aware": 0.75,
+          "n_failures": 4.0
+        }
+      },
+      "interaction_aware": {
+        "failure_recall": 0.6274509803921569,
+        "failures_found": 64.0,
+        "false_negatives": 38.0,
+        "false_positives": 36.0,
+        "precision": 0.64,
+        "sim_runtime_ms_total": 17.29670000713668,
+        "simulations": 100
+      },
+      "k": 100,
+      "n": 1000,
+      "n_failures": 102,
+      "scenario_recall": {
+        "3x_volume": {
+          "BLACKBOX_frozen_gate": 0.19801980198019803,
+          "anomaly_only": 0.5346534653465347,
+          "interaction_aware": 0.6336633663366337,
+          "n_failures": 101.0
+        },
+        "fraud_spike": {
+          "BLACKBOX_frozen_gate": 0.3333333333333333,
+          "anomaly_only": 0.7017543859649122,
+          "interaction_aware": 0.7368421052631579,
+          "n_failures": 57.0
+        },
+        "service_latency": {
+          "BLACKBOX_frozen_gate": 0.1794871794871795,
+          "anomaly_only": 0.41025641025641024,
+          "interaction_aware": 0.6410256410256411,
+          "n_failures": 39.0
+        }
+      }
+    }
+  },
+  "python": "3.12.10",
+  "raw_artifacts": {
+    "labels_from_simulator_match_ev": true,
+    "n_rows": 1000,
+    "phase2_raw_artifact_limitation": "Phase 2 bundle stored aggregates only; Phase 3 adds raw per-tx predictions for independent recalculation without touching Phase 2",
+    "raw_predictions_csv": "raw_predictions.csv",
+    "raw_predictions_sha256": "33b9c37c833b7bc41162b0777e7d24c96f44afabdbd5b782c33c184dbe85566a"
+  },
+  "report": "phase3_reproduction_and_robustness",
+  "runtime_overhead": {
+    "full_pipeline_over_gate_ratio": 1.425141515696313,
+    "gate_batch_ms_total": 171.92439999780618,
+    "gate_ms_per_tx": 0.17192439999780618,
+    "interaction_arith_ms_total": 0.040899998566601425,
+    "interaction_arith_over_gate_ratio": 0.00023789525260593217,
+    "interaction_extras_build_s": 0.2449756999994861,
+    "note": "interaction arithmetic-only vs gate batch; extras build reuses same extract_features the gate already needs in production scoring"
+  },
+  "split": "validation",
+  "threshold_operating_point_frozen_gate": {
+    "category_recall": {
+      "correlated_anomalies": 0.75,
+      "dependency_chain_failures": 0.0,
+      "high_value_low_blast_radius": null,
+      "jointly_dangerous": 0.0,
+      "low_value_high_blast_radius": 0.0,
+      "normal": 0.0,
+      "obvious_single_signal_danger": 0.25,
+      "unusual_but_harmless": 0.75
+    },
+    "failure_recall": 0.21568627450980393,
+    "failures_found": 22.0,
+    "false_negative_rate": 0.7843137254901961,
+    "mean_simulation_runtime_ms": 0.17777982471319806,
+    "policy": "BLACKBOX@threshold",
+    "precision": 0.19298245614035087,
+    "simulation_avoidance": 0.886,
+    "simulation_budget": 0.114,
+    "simulation_count": 114.0,
+    "simulation_fraction": 0.114,
+    "threshold": 0.6,
+    "total_failures": 102,
+    "total_simulation_runtime_ms": 20.26690001730458
+  }
+}

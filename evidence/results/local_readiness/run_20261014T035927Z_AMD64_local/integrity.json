@@ -1,0 +1,14 @@
+{
+  "impact_weights": {
+    "magnitude": 0.3,
+    "dependency": 0.3,
+    "anomaly": 0.25,
+    "uncertainty": 0.15
+  },
+  "impact_threshold": 0.6,
+  "phase2_sha256": {
+    "README.md": "99dbe5102b4d350506d3ebe9505513d709c23dadbb554ae44a337fb1965f601a",
+    "results.json": "3e26d1271e37fcf707a1b33aee26649b8c5dcef0677f5da42e18bfd52fd2ff52"
+  },
+  "interaction_hits_in_backend_py": 0
+}

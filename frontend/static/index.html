@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060a12">
+  <title>BLACKBOX</title>
+  <link rel="icon" type="image/svg+xml" href="/static/assets/logo.svg">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="app-shell">
+  <aside class="sidebar" aria-label="Primary">
+    <div class="brand-side">
+      <img class="brand-logo" src="/static/assets/logo.svg" width="56" height="56" alt="BLACKBOX cube logo">
+      <div class="brand-text">
+        <strong class="brand-wordmark" aria-label="BLACKBOX">
+          <span class="wm-black">BLACK</span><span class="wm-box">BOX</span>
+        </strong>
+        <p class="tag brand-slogan">Simulate today. Decide tomorrow.</p>
+      </div>
+    </div>
+    <nav class="side-nav">
+      <button type="button" class="side-item active" data-panel="panel-explorer">Decision Explorer</button>
+      <button type="button" class="side-item" data-panel="panel-studio">Dataset Studio</button>
+      <button type="button" class="side-item" data-panel="panel-challenge">Challenge Lab</button>
+      <button type="button" class="side-item" data-panel="panel-experiments">Experiments</button>
+      <button type="button" class="side-item" data-panel="panel-certs">Certificates</button>
+    </nav>
+    <div class="policy-card" id="policy-card">
+      <h3>Current Policy</h3>
+      <p class="mono" id="policy-version">v…</p>
+      <p class="fine" id="policy-mode">Impact Gate · Active Policy</p>
+      <p class="mono formula" id="policy-formula">I(T) = …</p>
+      <p class="fine">Threshold: <span id="policy-thr">0.60</span></p>
+      <span class="pill ok" id="policy-pill" title="Weights and threshold are MVP parameters, not claimed optimal.">MVP PARAMETERS</span>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <div>
+        <h1 id="page-title">Decision Explorer</h1>
+        <p class="tag" id="page-sub">Inspect how BLACKBOX made this decision.</p>
+      </div>
+      <div class="top-right">
+        <div id="runtime" class="chip" title="GET /health">runtime: checking…</div>
+      </div>
+    </header>
+
+    <!-- Decision Explorer -->
+    <section id="panel-explorer" class="panel-group active" aria-labelledby="page-title">
+      <div class="toolbar">
+        <label class="field">
+          <span>Transaction</span>
+          <select id="tx-select" aria-label="Transactions"></select>
+        </label>
+        <button id="break-btn" class="break inline" type="button" disabled>BREAK MY DECISION</button>
+        <a id="view-cert" class="cert-link" href="#certificates" hidden>
+          <span class="cert-label">View Certificate</span>
+          <span class="mono" id="view-cert-id">—</span>
+        </a>
+        <button id="dl-cert" class="btn" type="button" hidden title="Download the issued Decision Certificate as JSON">Download .json</button>
+      </div>
+
+      <details class="panel whatif" id="whatif-box">
+        <summary>What-If Research Workspace <span class="pill warn">RESEARCH ONLY</span></summary>
+        <p class="fine">Hypothetical re-score through the same backend gate. Does not change production state or stored certificates.</p>
+        <div class="map-form">
+          <label>amount <input type="number" id="wi-amount" step="0.01" min="0" placeholder="e.g. 5000"></label>
+          <label>transaction_type
+            <select id="wi-type">
+              <option value="">— unchanged —</option>
+              <option>card_payment</option>
+              <option>wire_transfer</option>
+              <option>ach_batch</option>
+              <option>refund</option>
+              <option>internal_transfer</option>
+            </select>
+          </label>
+        </div>
+        <button type="button" id="wi-btn" class="break inline" disabled>Run what-if</button>
+        <pre id="wi-out" class="code-block" hidden></pre>
+      </details>
+
+      <div id="state-idle" class="state">
+        <p class="big">Select a transaction and press <b>BREAK MY DECISION</b>.</p>
+        <p class="fine">The Impact Gate ranks transactions with the active formula (frozen M/D/A/U, or interaction-aware A/W/D/L). Selected transactions run three stress scenarios before a certificate is issued.</p>
+      </div>
+      <div id="state-busy" class="state" hidden>
+        <div class="spinner" aria-hidden="true"></div>
+        <p class="big"><span id="busy-label">Running preflight on</span> <span id="busy-tx"></span>…</p>
+      </div>
+      <div id="state-error" class="state" hidden>
+        <p class="big err">The analysis failed.</p>
+        <p id="error-msg" class="fine"></p>
+        <p class="fine">trace_id: <code id="error-trace">n/a</code></p>
+        <button id="retry-btn" class="ghost" type="button">Back</button>
+      </div>
+
+      <div id="state-result" hidden></div>
+    </section>
+
+    <!-- Dataset Studio -->
+    <section id="panel-studio" class="panel-group" hidden>
+      <div class="layout-2">
+        <section class="panel">
+          <h2>1 · Upload</h2>
+          <p class="fine">CSV or Parquet · max 5&nbsp;MiB · safe filenames · no code execution.</p>
+          <form id="upload-form" class="stack">
+            <input type="file" id="file-input" name="file" accept=".csv,.parquet" required>
+            <input type="text" id="display-name" placeholder="Display name (optional)">
+            <input type="text" id="attribution" placeholder="Attribution / source">
+            <input type="text" id="license-name" placeholder="License (e.g. CC BY 4.0)">
+            <input type="text" id="source-url" placeholder="Source URL">
+            <label class="check"><input type="checkbox" id="registry-credit"> Link ULB fraud registry metadata</label>
+            <button type="submit" class="break">Upload dataset</button>
+          </form>
+          <p id="upload-msg" class="fine" role="status"></p>
+          <h3>2 · Your datasets</h3>
+          <ul id="ds-list" class="tx-list"></ul>
+        </section>
+        <section class="panel" id="ds-detail">
+          <h2>3 · Preview, map &amp; validate</h2>
+          <p class="fine" id="ds-detail-empty">Select a dataset on the left.</p>
+          <div id="ds-preview" hidden></div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Challenge Lab -->
+    <section id="panel-challenge" class="panel-group" hidden>
+      <div class="layout-2">
+        <section class="panel">
+          <h2>Challenge Lab</h2>
+          <p class="fine">Gate-selection benchmark on a mapped dataset. External labels (fraud/default) are never treated as stress failures.</p>
+          <label class="check"><input type="checkbox" id="eval-stress"> Also run capped stress sample (slow)</label>
+          <label class="check">dataset
+            <select id="eval-ds" aria-label="Dataset to evaluate">
+              <option value="">— map a dataset first —</option>
+            </select>
+          </label>
+          <button type="button" id="eval-btn" class="break" disabled>Run evaluation</button>
+          <div id="eval-alert"></div>
+          <pre id="eval-out" class="code-block" hidden></pre>
+          <div id="eval-metrics" hidden></div>
+        </section>
+        <section class="panel">
+          <h2>Label space legend</h2>
+          <ul class="limits">
+            <li><span class="kind label">LABEL</span> External fraud / default / other — from your mapping.</li>
+            <li><span class="kind model">MODEL</span> Gate selection (simulate vs skip) — Impact Gate, active policy.</li>
+            <li><span class="kind unknown">UNKNOWN</span> Stress outcome — only when measured, never implied.</li>
+          </ul>
+          <p class="fine">Missed failure = gate skipped <b>and</b> independent stress measurement failed. Not inferred from the gate alone.</p>
+        </section>
+      </div>
+    </section>
+
+    <!-- Experiments -->
+    <section id="panel-experiments" class="panel-group" hidden>
+      <section class="panel">
+        <h2>Experiments</h2>
+        <p class="fine">Reproducible runs with dataset SHA-256, mapping, policy version, and metrics.</p>
+        <ul id="exp-list" class="tx-list"></ul>
+        <pre id="exp-detail" class="code-block" hidden></pre>
+      </section>
+    </section>
+
+    <!-- Certificates -->
+    <section id="panel-certs" class="panel-group" hidden>
+      <section class="panel">
+        <h2>Certificates</h2>
+        <p class="fine">Decision Certificates from this session. Link is stable; content is backend-generated.</p>
+        <ul id="cert-list" class="tx-list"></ul>
+      </section>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

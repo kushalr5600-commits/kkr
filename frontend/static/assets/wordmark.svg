@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 220" role="img" aria-label="BLACKBOX — Simulate Today. Decide Tomorrow.">
+  <defs>
+    <linearGradient id="boxGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2f8fff"/>
+      <stop offset="100%" stop-color="#5eb0ff"/>
+    </linearGradient>
+    <linearGradient id="blackGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#c8d4e4"/>
+    </linearGradient>
+  </defs>
+  <text x="40" y="130" font-family="Arial Black, Helvetica Neue, Arial, sans-serif" font-weight="900" font-size="92" letter-spacing="6" fill="url(#blackGrad)">BLACK</text>
+  <text x="318" y="130" font-family="Arial Black, Helvetica Neue, Arial, sans-serif" font-weight="900" font-size="92" letter-spacing="6" fill="url(#boxGrad)">BOX</text>
+  <text x="130" y="178" font-family="Arial, Helvetica Neue, sans-serif" font-weight="500" font-size="22" letter-spacing="8" fill="#d7e4f5">SIMULATE TODAY. DECIDE TOMORROW.</text>
+</svg>

@@ -1,0 +1,1 @@
+{"status":"ok","runtime":"linuxone","architecture":"s390x","version":"0.1.0-prebuild","model_backend":"sklearn","gate_threshold":"0.60","python":"3.11.15","otel_enabled":"0","otel_package":"1","dataset_studio":"enabled","openml_client":"0"}

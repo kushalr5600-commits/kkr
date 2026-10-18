@@ -1,0 +1,23 @@
+{
+  "0.01": {
+    "BLACKBOX_frozen_gate": 0.0392156862745098,
+    "anomaly_only": 0.058823529411764705,
+    "beats_anomaly": true,
+    "beats_gate": true,
+    "interaction_aware": 0.09803921568627451
+  },
+  "0.05": {
+    "BLACKBOX_frozen_gate": 0.13725490196078433,
+    "anomaly_only": 0.3235294117647059,
+    "beats_anomaly": true,
+    "beats_gate": true,
+    "interaction_aware": 0.4117647058823529
+  },
+  "0.1": {
+    "BLACKBOX_frozen_gate": 0.19607843137254902,
+    "anomaly_only": 0.5294117647058824,
+    "beats_anomaly": true,
+    "beats_gate": true,
+    "interaction_aware": 0.6274509803921569
+  }
+}

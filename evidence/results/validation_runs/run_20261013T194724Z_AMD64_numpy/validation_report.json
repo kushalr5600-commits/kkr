@@ -1,0 +1,102 @@
+{
+  "architecture_process": "AMD64",
+  "dataset_matches_manifest": true,
+  "dataset_sha256": "546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3",
+  "finished_at_utc": "2026-10-13T19:47:24.152107+00:00",
+  "git_revision": null,
+  "model_backend": "numpy",
+  "overall_status": "PASS",
+  "python_version": "3.12.10",
+  "runtime_label": "local",
+  "started_at_utc": "2026-10-13T19:46:14.488077+00:00",
+  "steps": [
+    {
+      "command": "",
+      "duration_s": 0.0,
+      "exit_code": null,
+      "name": "pip_install_requirements_dev",
+      "notes": "skipped (no --install flag); use on target only if install is permitted",
+      "required": false,
+      "status": "NOT RUN",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\Users\\user\\AppData\\Local\\Temp\\opencode\\blackbox_work\\blackbox\\scripts\\diagnose_env.py --json",
+      "duration_s": 2.763,
+      "exit_code": 0,
+      "name": "environment_diagnostics",
+      "notes": "process_machine=AMD64; runtime_label=local; backend=numpy; linuxone_verified=False",
+      "required": true,
+      "status": "PASS",
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"architecture\": {\n    \"claim_linuxone_verified\": false,\n    \"process_is_s390x\": false,\n    \"process_machine\": \"AMD64\",\n    \"runtime_label\": \"local\"\n  },\n  \"blackbox_root\": \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Temp\\\\opencode\\\\blackbox_work\\\\blackbox\",\n  \"config\": {\n    \"config_sha256\": \"83b2a8f3669a48a81795ea4a7e29197a4d879d90500e4f54103b09a2df432a91\",\n    \"config_version\": \"0.1.0-prebuild\",\n    \"impact_threshold\": 0.6,\n    \"impact_weights\": {\n      \"anomaly\": 0.25,\n      \"dependency\": 0.3,\n      \"magnitude\": 0.3,\n      \"uncertainty\": 0.15\n    }\n  },\n  \"dataset\": {\n    \"dataset_path\": \"backend\\\\data\\\\sample_dataset.json\",\n    \"dataset_sha256\": \"546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3\",\n    \"manifest_sha256_field\": \"546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3\",\n    \"matches_manifest\": true\n  },\n  \"dependencies\": {\n    \"fastapi\": {\n      \"import_error\": null,\n      \"installed\": true,\n      \"version\": \"0.141.1\"\n    },\n    \"httpx\": {\n      \"import_error\": null,\n      \"installed\": true,\n      \"version\": \"0.28.1\"\n    },\n    \"numpy\": {\n      \"import_error\": null,\n      \"installed\": true,\n      \"version\": \"2.5.2\"\n    },\n    \"pydantic\": {\n      \"import_error\": null,\n      \"installed\": true,\n      \"version\": \"2.13.4\"\n    },\n    \"pytest\": {\n      \"import_error\": null,\n      \"installed\": true,\n      \"version\": \"9.1.1\"\n    },\n    \"sklearn\": {\n      \"import_error\": \"ImportError\",\n      \"installed\": false,\n      \"version\": null\n    },\n    \"uvicorn\": {\n      \"import_error\": null,\n      \"installed\": true,\n      \"version\": \"0.52.4\"\n    }\n  },\n  \"git_revision\": null,\n  \"model_backend\": {\n    \"env_var\": \"(unset)\",\n    \"note\": \"numpy is the documented fallback when scikit-learn is unavailable; scores and rankings can differ between backends (see docs/BACKEND_EVIDENCE.md).\",\n    \"selected\": \"numpy\"\n  },\n  \"os\": {\n    \"host_kernel_machine\": \"AMD64\",\n    \"platform_string\": \"Windows-10-10.0.19045-SP0\",\n    \"release\": \"10\",\n    \"system\": \"Windows\"\n  },\n  \"python\": {\n    \"executable\": \"C:\\\\Users\\\\user\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\",\n    \"implementation\": \"CPython\",\n    \"pointer_bits\": 64,\n    \"sysconfig_platform\": \"win-amd64\",\n    \"version\": \"3.12.10\"\n  },\n  \"report\": \"blackbox_environment_diagnostics\",\n  \"scikit_learn_importable\": false,\n  \"truth_rule\": \"runtime=linuxone is asserted only when the running Python process reports machine s390x; observed process machine='AMD64'.\"\n}\n"
+    },
+    {
+      "command": "inline: hashlib.sha256(sample_dataset.json) vs manifest.sha256",
+      "duration_s": 0.0,
+      "exit_code": 0,
+      "name": "dataset_manifest_integrity",
+      "notes": "sha256=546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3; manifest=546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3",
+      "required": true,
+      "status": "PASS",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\Users\\user\\AppData\\Local\\Temp\\opencode\\blackbox_work\\blackbox\\scripts\\run_tests.py",
+      "duration_s": 26.609,
+      "exit_code": 0,
+      "name": "run_tests_dependency_free",
+      "notes": "no FAIL lines",
+      "required": true,
+      "status": "PASS",
+      "stderr_tail": "\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 4.068, \"stage\": \"response_sent\", \"status\": \"ok\", \"trace_id\": \"TR-c799f0236871\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.0, \"stage\": \"request_received\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.217, \"stage\": \"context_loaded\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 2.506, \"stage\": \"gate_scored\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.0, \"stage\": \"simulation_started\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.057, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.045, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.059, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.301, \"stage\": \"fragility_completed\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.22, \"stage\": \"certificate_generated\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 4.402, \"stage\": \"response_sent\", \"status\": \"ok\", \"trace_id\": \"TR-b402c5766e98\", \"transaction_id\": \"TX-00008\"}\n{\"elapsed_ms\": 0.0, \"stage\": \"request_received\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.193, \"stage\": \"context_loaded\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 1.05, \"stage\": \"gate_scored\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.0, \"stage\": \"simulation_started\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.04, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.044, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.035, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.274, \"stage\": \"fragility_completed\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.135, \"stage\": \"certificate_generated\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 2.278, \"stage\": \"response_sent\", \"status\": \"ok\", \"trace_id\": \"TR-0c721d5e4055\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.0, \"stage\": \"request_received\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 1.424, \"stage\": \"context_loaded\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.97, \"stage\": \"gate_scored\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.0, \"stage\": \"simulation_started\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.035, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.031, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.028, \"stage\": \"scenario_completed\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.222, \"stage\": \"fragility_completed\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 0.115, \"stage\": \"certificate_generated\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n{\"elapsed_ms\": 1.985, \"stage\": \"response_sent\", \"status\": \"ok\", \"trace_id\": \"TR-cc662b019f38\", \"transaction_id\": \"TX-00300\"}\n",
+      "stdout_tail": ".unit.test_certificate::test_policy_adequate_margin_allows_and_lower_bound_counts_as_adequate  (0.00s)\nPASS  tests.unit.test_certificate::test_policy_any_stress_failure_blocks  (0.00s)\nPASS  tests.unit.test_certificate::test_policy_low_impact_allows_normal_path  (0.00s)\nPASS  tests.unit.test_certificate::test_policy_thin_margin_reviews  (0.00s)\nPASS  tests.unit.test_certificate::test_review_certificate_never_claims_safety  (0.00s)\nPASS  tests.unit.test_certificate::test_simulated_certificate_with_failure_blocks_and_cites_metrics  (0.00s)\nPASS  tests.unit.test_data::test_account_and_context_linkage  (0.73s)\nPASS  tests.unit.test_data::test_demo_pair_is_outside_the_evaluation_splits  (0.00s)\nPASS  tests.unit.test_data::test_exactly_five_joint_profiles_are_present  (0.00s)\nPASS  tests.unit.test_data::test_generation_is_deterministic_under_a_fixed_seed  (0.43s)\nPASS  tests.unit.test_data::test_graph_uses_only_frozen_node_types  (0.02s)\nPASS  tests.unit.test_data::test_ids_are_unique_and_all_categories_present  (0.01s)\nPASS  tests.unit.test_data::test_joint_cases_are_not_extreme_by_amount_alone  (0.00s)\nPASS  tests.unit.test_data::test_joint_pairs_keep_ground_truth_structure_and_60_second_cooccurrence  (0.06s)\nPASS  tests.unit.test_data::test_unknown_account_and_unsupported_type_are_input_errors  (0.00s)\nPASS  tests.unit.test_diagnostics_env::test_architecture_truth_rules_match_process_machine  (0.58s)\nPASS  tests.unit.test_diagnostics_env::test_certificate_runtime_evidence_line_is_truthful  (1.96s)\nPASS  tests.unit.test_diagnostics_env::test_collect_returns_required_sections  (0.01s)\nPASS  tests.unit.test_diagnostics_env::test_config_fingerprint_exposes_frozen_threshold  (0.01s)\nPASS  tests.unit.test_diagnostics_env::test_dataset_fingerprint_reports_manifest_match  (0.01s)\nPASS  tests.unit.test_diagnostics_env::test_does_not_claim_linuxone_from_config_mentions_alone  (0.01s)\nPASS  tests.unit.test_diagnostics_env::test_model_backend_selection_is_reported  (0.01s)\nPASS  tests.unit.test_diagnostics_env::test_pointer_bits_matches_struct  (0.00s)\nPASS  tests.unit.test_diagnostics_env::test_report_is_json_serializable  (0.01s)\nPASS  tests.unit.test_diagnostics_env::test_validation_report_evidence_bundle_write  (0.01s)\nPASS  tests.unit.test_gate::test_all_signals_and_scores_are_normalized_to_unit_interval  (0.73s)\nPASS  tests.unit.test_gate::test_anomaly_signal_is_higher_for_failures_than_for_ordinary_transactions  (0.89s)\nPASS  tests.unit.test_gate::test_exact_weighted_equation  (0.00s)\nPASS  tests.unit.test_gate::test_fitting_on_any_split_but_calibration_is_refused  (0.00s)\nPASS  tests.unit.test_gate::test_magnitude_is_monotone_and_zero_below_baseline  (0.00s)\nPASS  tests.unit.test_gate::test_models_were_fitted_on_the_calibration_split_only  (0.00s)\nPASS  tests.unit.test_gate::test_numpy_fallback_backend_produces_valid_scores  (2.78s)\nPASS  tests.unit.test_gate::test_same_input_and_seed_give_the_same_score  (3.66s)\nPASS  tests.unit.test_gate::test_threshold_routing_boundary_is_0_60_inclusive  (0.75s)\nPASS  tests.unit.test_gate::test_uncertainty_is_a_real_ensemble_disagreement_and_reproducible  (0.07s)\nPASS  tests.unit.test_simulation::test_attack_returns_one_normal_and_one_stress_result  (0.00s)\nPASS  tests.unit.test_simulation::test_failure_predicates_are_monotone_in_intensity  (0.67s)\nPASS  tests.unit.test_simulation::test_failure_reasons_are_metrics_not_labels  (0.00s)\nPASS  tests.unit.test_simulation::test_fork_isolation_state_is_never_stressed_twice  (0.00s)\nPASS  tests.unit.test_simulation::test_fragility_edge_cases  (0.00s)\nPASS  tests.unit.test_simulation::test_fragility_interval_is_one_resolution_wide_and_honest  (0.10s)\nPASS  tests.unit.test_simulation::test_normal_and_stress_outcomes_are_distinct_under_load  (0.00s)\nPASS  tests.unit.test_simulation::test_three_scenarios_behave_differently  (0.00s)\nPASS  tests.unit.test_simulation::test_unknown_scenario_and_foreign_baseline_are_rejected  (0.00s)\n\n67 passed, 0 failed in 25.7s\n"
+    },
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pytest -q",
+      "duration_s": 25.147,
+      "exit_code": 0,
+      "name": "pytest_full_suite",
+      "notes": "pytest reported passed without failed",
+      "required": true,
+      "status": "PASS",
+      "stderr_tail": "",
+      "stdout_tail": "...................................................................      [100%]\n============================== warnings summary ===============================\ntests/integration/test_full_pipeline.py::test_http_routes_when_fastapi_is_available\n  C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n    from starlette.testclient import TestClient as TestClient  # noqa\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n67 passed, 1 warning in 22.82s\n"
+    },
+    {
+      "command": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\Users\\user\\AppData\\Local\\Temp\\opencode\\blackbox_work\\blackbox\\scripts\\smoke_test.py",
+      "duration_s": 7.216,
+      "exit_code": 0,
+      "name": "smoke_test_pipeline_and_http",
+      "notes": "all smoke checks PASS including HTTP",
+      "required": true,
+      "status": "PASS",
+      "stderr_tail": "C:\\Users\\user\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\fastapi\\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.\n  from starlette.testclient import TestClient as TestClient  # noqa\n{\"elapsed_ms\": 0.0, \"stage\": \"request_received\", \"status\": \"ok\", \"trace_id\": \"TR-a543f75427ee\", \"transaction_id\": \"TX-DEMO-0001\"}\n{\"elapsed_ms\": 0.218, \"stage\": \"context_loaded\", \"status\": \"ok\", \"trace_id\": \"TR-a543f75427ee\", \"transaction_id\": \"TX-DEMO-0001\"}\n{\"elapsed_ms\": 1.042, \"stage\": \"gate_scored\", \"status\": \"ok\", \"trace_id\": \"TR-a543f75427ee\", \"transaction_id\": \"TX-DEMO-0001\"}\n{\"elapsed_ms\": 0.076, \"stage\": \"certificate_generated\", \"status\": \"ok\", \"trace_id\": \"TR-a543f75427ee\", \"transaction_id\": \"TX-DEMO-0001\"}\n{\"elapsed_ms\": 1.379, \"stage\": \"response_sent\", \"status\": \"ok\", \"trace_id\": \"TR-a543f75427ee\", \"transaction_id\": \"TX-DEMO-0001\"}\n",
+      "stdout_tail": "health: {'status': 'ok', 'runtime': 'local', 'architecture': 'AMD64', 'version': '0.1.0-prebuild', 'model_backend': 'numpy', 'gate_threshold': '0.60', 'python': '3.12.10'}\nPASS  service reports ok\nPASS  demo mode analyzes the fixed demo transaction\nPASS  demo certificate status = NO_SIMULATION\nPASS  demo impact score is deterministic\nPASS  at least one example transaction is selected for simulation\nPASS  6 fork results (normal+stress x 3 scenarios)\nPASS  3 fragility results\nsimulated example: TX-00300 BLOCK_OR_HOLD\nPASS  GET /health\nPASS  GET /dashboard\nPASS  POST /analyze (demo)\nPASS  POST /analyze rejects an empty request\nsmoke test complete\n"
+    },
+    {
+      "command": "uvicorn :8765 + urllib /health /analyze demo + empty-body 422",
+      "duration_s": 0.612,
+      "exit_code": 0,
+      "name": "live_http_uvicorn",
+      "notes": "real HTTP against a live uvicorn process",
+      "required": false,
+      "status": "PASS",
+      "stderr_tail": "",
+      "stdout_tail": "LIVE_HTTP_OK AMD64 NO_SIMULATION ALLOW_NORMAL_PATH\n"
+    },
+    {
+      "command": "",
+      "duration_s": 0.0,
+      "exit_code": null,
+      "name": "validation_experiment_rerun",
+      "notes": "deliberately not run by default: re-running overwrites evidence/results/validation. See docs/BACKEND_EVIDENCE.md; use scripts/run_experiment.py manually when needed.",
+      "required": false,
+      "status": "NOT RUN",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    }
+  ]
+}

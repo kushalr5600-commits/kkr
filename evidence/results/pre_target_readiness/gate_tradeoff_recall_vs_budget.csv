@@ -1,0 +1,4 @@
+budget,random,amount_only,anomaly_only,frozen_gate,interaction_aware_research_only
+0.01,0.010,0.020,0.059,0.039,0.098
+0.05,0.049,0.020,0.324,0.137,0.412
+0.10,0.102,0.039,0.529,0.196,0.627

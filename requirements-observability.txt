@@ -1,0 +1,10 @@
+# Optional observability (NOT required for the core app or demos).
+#   pip install -r requirements-observability.txt
+#   export BLACKBOX_OTEL=1
+# Safe when packages are absent: backend/shared/tracing.py is a no-op.
+# No collector or external service is required.
+#
+# License note: OpenTelemetry Python packages are Apache-2.0.
+# Verify s390x wheel availability on the target before relying on them.
+opentelemetry-api>=1.25.0
+opentelemetry-sdk>=1.25.0

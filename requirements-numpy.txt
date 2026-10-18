@@ -1,0 +1,10 @@
+# Minimal runtime dependencies without scikit-learn (NumPy model backend).
+# Use on hosts where scikit-learn does not install (e.g. some s390x guests):
+#   pip install -r requirements-numpy.txt
+#   export BLACKBOX_MODEL_BACKEND=numpy   # optional; auto-selected if sklearn is absent
+# Certificates will report model_backend=numpy — do not label them as sklearn.
+fastapi>=0.110
+uvicorn>=0.29
+pydantic>=2.6
+numpy>=1.26
+python-multipart>=0.0.9

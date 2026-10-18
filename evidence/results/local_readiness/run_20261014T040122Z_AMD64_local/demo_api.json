@@ -1,0 +1,51 @@
+{
+  "certificate_id": "CERT-47A832848645",
+  "trace_id": "TR-2108bdceb8ee",
+  "status": "NO_SIMULATION",
+  "transaction_id": "TX-DEMO-0001",
+  "decision_description": "Preflight of wire_transfer TX-DEMO-0001: amount 2,406.59 on account ACC-0126",
+  "impact_score": {
+    "transaction_id": "TX-DEMO-0001",
+    "signals": {
+      "magnitude": 0.1323009275411138,
+      "dependency": 0.8,
+      "anomaly": 0.47540983606557374,
+      "uncertainty": 0.10220902978601719
+    },
+    "score": 0.41387409174663015,
+    "gate_decision": false
+  },
+  "forks_tested": [],
+  "fragility": [],
+  "recommended_action": "ALLOW_NORMAL_PATH",
+  "evidence": [
+    "Impact Gate: score 0.414 < threshold 0.60 (M=0.13, D=0.80, A=0.48, U=0.10; weights 0.30/0.30/0.25/0.15).",
+    "Pipeline time (gate, simulation, certificate): 1.9 ms.",
+    "Runtime: CPython 3.12.10 on Windows on AMD64; model backend numpy; git unavailable; config 0.1.0-prebuild; config_sha256 83b2a8f3669a; dataset_sha256 546f57ce9129; seed 42.",
+    "No deep simulation was run: the score is below the gate threshold, so the transaction continues on the normal path.",
+    "Demo policy: ALLOW_NORMAL_PATH - gate did not select the transaction for deep simulation.",
+    "LIMITATION: Synthetic data and a modelled enterprise: results describe the simulated system, not a real institution.",
+    "LIMITATION: Demo policy only: the recommended action is a deterministic prototype rule, not production authorization.",
+    "LIMITATION: Gate weights, threshold and failure limits are declared MVP parameters, not claimed optimal.",
+    "LIMITATION: Fragility is a bounded interval at the stated resolution, not an exact physical boundary."
+  ],
+  "runtime": {
+    "runtime": "CPython 3.12.10 on Windows",
+    "architecture": "AMD64",
+    "model_versions": {
+      "backend": "numpy",
+      "anomaly_model": "RobustMahalanobis [numpy-2.5.2]",
+      "risk_model": "BaggedLogisticRegression (std of member P(fail)) [numpy-2.5.2]",
+      "anomaly_normalization": "empirical_cdf_on_calibration_split",
+      "uncertainty_normalization": "std_across_members / 0.5, clipped to [0, 1]",
+      "fitted_on_split": "calibration",
+      "python": "3.12.10",
+      "numpy": "2.5.2",
+      "blackbox": "0.1.0-prebuild",
+      "config_sha256": "83b2a8f3669a48a81795ea4a7e29197a4d879d90500e4f54103b09a2df432a91",
+      "dataset_sha256": "546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3"
+    },
+    "random_seed": 42,
+    "git_revision": null
+  }
+}

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BLACKBOX</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <h1>BLACKBOX</h1>
+        <p class="tag">Don't predict the future. Test it first.</p>
+      </div>
+    </div>
+    <div id="runtime" class="chip" title="Reported by GET /health">runtime: local ┬╖ AMD64 ┬╖ models: numpy</div>
+  </header>
+
+  <main class="layout">
+    <section class="panel picker" aria-labelledby="pick-h">
+      <h2 id="pick-h">Decision under test</h2>
+      <ul id="tx-list" class="tx-list" role="listbox" aria-label="Transactions"><li><button class="tx-item" type="button" role="option" aria-selected="true"><div class="tx-id">TX-DEMO-0001</div><div class="tx-meta">wire_transfer ┬╖ 2406.59 ┬╖ Fixed demo transaction (jointly dangerous pair, 2nd half)</div></button></li><li><button class="tx-item" type="button" role="option" aria-selected="false"><div class="tx-id">TX-00300</div><div class="tx-meta">wire_transfer ┬╖ 3488.05 ┬╖ Gate selects it; fails a stress test</div></button></li><li><button class="tx-item" type="button" role="option" aria-selected="false"><div class="tx-id">TX-00008</div><div class="tx-meta">wire_transfer ┬╖ 2118.84 ┬╖ Gate selects it; survives stress</div></button></li><li><button class="tx-item" type="button" role="option" aria-selected="false"><div class="tx-id">TX-00001</div><div class="tx-meta">internal_transfer ┬╖ 215.99 ┬╖ Gate skips it; would survive stress</div></button></li><li><button class="tx-item" type="button" role="option" aria-selected="false"><div class="tx-id">TX-00108-B</div><div class="tx-meta">ach_batch ┬╖ 4030.20 ┬╖ Gate skips it; would FAIL stress (missed failure)</div></button></li></ul>
+      <button id="break-btn" class="break" type="button">BREAK MY DECISION</button>
+      <p class="fine">Every number on this page comes from the backend. The browser only collects and renders.</p>
+    </section>
+
+    <section class="panel result" aria-live="polite" aria-labelledby="res-h">
+      <h2 id="res-h" class="sr-only">Decision Certificate</h2>
+      <div id="state-idle" class="state">
+        <p class="big">Select a transaction and press <b>BREAK MY DECISION</b>.</p>
+        <p class="fine">BLACKBOX scores the transaction with the Impact Gate. If it is selected, three stress scenarios are applied and the distance to failure is measured before a certificate is issued.</p>
+      </div>
+      <div id="state-busy" class="state" hidden="">
+        <div class="spinner" aria-hidden="true"></div>
+        <p class="big">Stress-testing <span id="busy-tx"></span>ΓÇª</p>
+      </div>
+      <div id="state-error" class="state" hidden="">
+        <p class="big err">The analysis failed.</p>
+        <p id="error-msg" class="fine"></p>
+        <p class="fine">trace_id: <code id="error-trace">n/a</code></p>
+        <button id="retry-btn" class="ghost" type="button">Back</button>
+      </div>
+      <div id="state-result" hidden=""></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+
+
+</body></html>

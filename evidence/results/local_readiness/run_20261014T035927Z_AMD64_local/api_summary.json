@@ -1,0 +1,31 @@
+{
+  "http_status": "OK",
+  "health": {
+    "status": "ok",
+    "runtime": "local",
+    "architecture": "AMD64",
+    "version": "0.1.0-prebuild",
+    "model_backend": "numpy",
+    "gate_threshold": "0.60",
+    "python": "3.12.10"
+  },
+  "demo": {
+    "transaction_id": "TX-DEMO-0001",
+    "status": "NO_SIMULATION",
+    "action": "ALLOW_NORMAL_PATH",
+    "score": 0.41387409174663015,
+    "forks": 0,
+    "backend": "numpy"
+  },
+  "simulated": {
+    "transaction_id": "TX-00300",
+    "status": "SIMULATED",
+    "action": "BLOCK_OR_HOLD",
+    "score": 0.7186539195457872,
+    "forks": 6,
+    "backend": "numpy"
+  },
+  "empty_request_status": 422,
+  "dashboard_status": 200,
+  "expected_demo_id": "TX-DEMO-0001"
+}

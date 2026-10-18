@@ -1,0 +1,299 @@
+{
+ "AMOUNT_LOAD_BASE": 0.7,
+ "AMOUNT_LOAD_CAP": 5.0,
+ "AMOUNT_LOAD_REF": 2000.0,
+ "AMOUNT_LOAD_SLOPE": 0.3,
+ "ANOMALY_FALLBACK_MODEL": "RobustMahalanobis",
+ "ANOMALY_MODEL": "IsolationForest",
+ "ANOMALY_NORMALIZATION": "empirical_cdf_on_calibration_split",
+ "ANOMALY_N_ESTIMATORS": 100,
+ "BACKGROUND_LOAD_MIN": 0.04,
+ "BACKGROUND_LOAD_SPAN": 0.09,
+ "BASE_LATENCY_MS": {
+  "payment_gateway": 40.0,
+  "fraud_engine": 60.0,
+  "risk_model": 80.0,
+  "ledger": 50.0,
+  "settlement": 120.0,
+  "notification": 30.0,
+  "reporting": 90.0
+ },
+ "CAPACITY": {
+  "payment_gateway": 10.0,
+  "fraud_engine": 8.0,
+  "risk_model": 6.0,
+  "ledger": 12.0,
+  "settlement": 10.0,
+  "notification": 15.0,
+  "reporting": 20.0
+ },
+ "CATEGORIES": [
+  "normal",
+  "unusual_but_harmless",
+  "obvious_single_signal_danger",
+  "high_value_low_blast_radius",
+  "low_value_high_blast_radius",
+  "correlated_anomalies",
+  "dependency_chain_failures",
+  "jointly_dangerous"
+ ],
+ "CATEGORY_MIX": {
+  "unusual_but_harmless": 0.12,
+  "obvious_single_signal_danger": 0.02,
+  "high_value_low_blast_radius": 0.05,
+  "low_value_high_blast_radius": 0.02,
+  "correlated_anomalies": 0.02,
+  "dependency_chain_failures": 0.02,
+  "jointly_dangerous": 0.03
+ },
+ "CRITICALITY": {
+  "payment_gateway": 2.0,
+  "fraud_engine": 2.0,
+  "risk_model": 2.0,
+  "ledger": 3.0,
+  "settlement": 3.0,
+  "notification": 1.0,
+  "reporting": 1.0
+ },
+ "DATASET_BASE_TIME": "2026-03-02T09:00:00+00:00",
+ "DATASET_N_ACCOUNTS": 150,
+ "DATASET_SEED": 42,
+ "DATASET_SIZE": 5000,
+ "DEFAULT_BACKGROUND_LOAD": 0.15,
+ "DEMO_SCENARIO": "3x_volume",
+ "DEMO_SEED": 42,
+ "DEMO_TRANSACTION_ID": "TX-DEMO-0001",
+ "DEPENDENCY_ACCOUNT_SATURATION": 5,
+ "DEPENDENCY_ACCOUNT_WEIGHT": 0.2,
+ "DEPENDENCY_SERVICE_WEIGHT": 0.8,
+ "EXPERIMENT_BUDGETS": [
+  0.005,
+  0.01,
+  0.02,
+  0.05,
+  0.1,
+  1.0
+ ],
+ "EXPERIMENT_POLICIES": [
+  "random",
+  "amount_only",
+  "anomaly_only",
+  "BLACKBOX"
+ ],
+ "EXPERIMENT_RANDOM_DRAWS": 200,
+ "FALLBACK_LOGREG_ITERATIONS": 25,
+ "FALLBACK_LOGREG_L2": 1.0,
+ "FALLBACK_N_BOOTSTRAPS": 25,
+ "FRAGILITY_RESOLUTION": 0.05,
+ "FRAGILITY_UNIT": "x_intensity",
+ "FRAGILITY_UNIT_LOWER_BOUND": "x_intensity_lower_bound",
+ "FRAUD_AFFECTED_SERVICES": [
+  "fraud_engine",
+  "risk_model"
+ ],
+ "FRAUD_CASCADE_COEFF": 0.5,
+ "FRAUD_CASCADE_SERVICES": [
+  "ledger",
+  "notification",
+  "settlement"
+ ],
+ "IMPACT_THRESHOLD": 0.6,
+ "IMPACT_WEIGHTS": {
+  "magnitude": 0.3,
+  "dependency": 0.3,
+  "anomaly": 0.25,
+  "uncertainty": 0.15
+ },
+ "LATENCY_AFFECTED_SERVICES": [
+  "payment_gateway",
+  "ledger",
+  "settlement"
+ ],
+ "LATENCY_BUDGET_MS": 1100.0,
+ "LATENCY_UTILIZATION_COEFF": 1.0,
+ "MAGNITUDE_Z_SATURATION": 4.0,
+ "MAX_INTENSITY": 10.0,
+ "MIN_INTENSITY": 1.0,
+ "MODEL_BACKEND_ENV": "BLACKBOX_MODEL_BACKEND",
+ "MODEL_SEED": 42,
+ "NODE_TYPES": [
+  "account",
+  "transaction",
+  "payment_gateway",
+  "fraud_engine",
+  "risk_model",
+  "ledger",
+  "settlement",
+  "notification",
+  "reporting"
+ ],
+ "PRODUCT_NAME": "BLACKBOX",
+ "REVIEW_MARGIN": 0.25,
+ "RISK_MIN_SAMPLES_LEAF": 3,
+ "RISK_N_ESTIMATORS": 100,
+ "SCENARIOS": [
+  "3x_volume",
+  "fraud_spike",
+  "service_latency"
+ ],
+ "SCENARIO_DEFAULT_INTENSITY": {
+  "3x_volume": 3.0,
+  "fraud_spike": 3.0,
+  "service_latency": 3.0
+ },
+ "SERVICES": [
+  "payment_gateway",
+  "fraud_engine",
+  "risk_model",
+  "ledger",
+  "settlement",
+  "notification",
+  "reporting"
+ ],
+ "SPLIT_FRACTIONS": {
+  "calibration": 0.5,
+  "validation": 0.2,
+  "test": 0.3
+ },
+ "TRANSACTION_PROFILES": {
+  "card_payment": {
+   "footprint": {
+    "payment_gateway": 0.8,
+    "fraud_engine": 0.7,
+    "risk_model": 0.4,
+    "ledger": 0.6,
+    "notification": 0.3
+   },
+   "flow": [
+    [
+     "payment_gateway",
+     "fraud_engine"
+    ],
+    [
+     "fraud_engine",
+     "risk_model"
+    ],
+    [
+     "risk_model",
+     "ledger"
+    ],
+    [
+     "ledger",
+     "notification"
+    ]
+   ]
+  },
+  "wire_transfer": {
+   "footprint": {
+    "payment_gateway": 0.5,
+    "fraud_engine": 0.9,
+    "risk_model": 0.9,
+    "ledger": 0.9,
+    "settlement": 1.2,
+    "reporting": 0.4,
+    "notification": 0.3
+   },
+   "flow": [
+    [
+     "payment_gateway",
+     "fraud_engine"
+    ],
+    [
+     "fraud_engine",
+     "risk_model"
+    ],
+    [
+     "risk_model",
+     "ledger"
+    ],
+    [
+     "ledger",
+     "settlement"
+    ],
+    [
+     "settlement",
+     "reporting"
+    ],
+    [
+     "settlement",
+     "notification"
+    ]
+   ]
+  },
+  "ach_batch": {
+   "footprint": {
+    "payment_gateway": 0.5,
+    "ledger": 1.0,
+    "settlement": 1.3,
+    "reporting": 0.6
+   },
+   "flow": [
+    [
+     "payment_gateway",
+     "ledger"
+    ],
+    [
+     "ledger",
+     "settlement"
+    ],
+    [
+     "settlement",
+     "reporting"
+    ]
+   ]
+  },
+  "refund": {
+   "footprint": {
+    "fraud_engine": 0.4,
+    "risk_model": 0.3,
+    "ledger": 0.7,
+    "notification": 0.3
+   },
+   "flow": [
+    [
+     "fraud_engine",
+     "risk_model"
+    ],
+    [
+     "risk_model",
+     "ledger"
+    ],
+    [
+     "ledger",
+     "notification"
+    ]
+   ]
+  },
+  "internal_transfer": {
+   "footprint": {
+    "ledger": 0.6,
+    "reporting": 0.3,
+    "notification": 0.2
+   },
+   "flow": [
+    [
+     "ledger",
+     "reporting"
+    ],
+    [
+     "ledger",
+     "notification"
+    ]
+   ]
+  }
+ },
+ "TRANSACTION_TYPES": [
+  "card_payment",
+  "wire_transfer",
+  "ach_batch",
+  "refund",
+  "internal_transfer"
+ ],
+ "UNCERTAINTY_FALLBACK_MODEL": "BaggedLogisticRegression (std of member P(fail))",
+ "UNCERTAINTY_MAX_STD": 0.5,
+ "UNCERTAINTY_MODEL": "RandomForestClassifier (std of per-tree P(fail))",
+ "UNCERTAINTY_NORMALIZATION": "std_across_members / 0.5, clipped to [0, 1]",
+ "UTILIZATION_FAILURE_LIMIT": 1.0,
+ "VERSION": "0.1.0-prebuild",
+ "WINDOW_SECONDS": 60
+}

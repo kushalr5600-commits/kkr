@@ -1,0 +1,199 @@
+{
+  "certificate_id": "CERT-CD279CC86989",
+  "trace_id": "TR-478506535a5c",
+  "status": "SIMULATED",
+  "transaction_id": "TX-00300",
+  "decision_description": "Preflight of wire_transfer TX-00300: amount 3,488.05 on account ACC-0120",
+  "impact_score": {
+    "transaction_id": "TX-00300",
+    "signals": {
+      "magnitude": 0.833144759811211,
+      "dependency": 0.8,
+      "anomaly": 0.9144342263094762,
+      "uncertainty": 0.0006795668336984018
+    },
+    "score": 0.7186539195457872,
+    "gate_decision": true
+  },
+  "forks_tested": [
+    {
+      "fork_name": "normal",
+      "scenario": "3x_volume",
+      "survived": true,
+      "metrics": {
+        "intensity": 1.0,
+        "max_utilization": 0.73213495,
+        "utilization_limit": 1.0,
+        "headroom": 0.26786505000000005,
+        "util_payment_gateway": 0.28411165,
+        "util_fraud_engine": 0.5576512124999999,
+        "util_risk_model": 0.73213495,
+        "util_ledger": 0.44836747499999996,
+        "util_settlement": 0.6064879599999999,
+        "util_notification": 0.20146466000000002,
+        "util_reporting": 0.18316466,
+        "recent_transactions_in_window": 3.0,
+        "defaulted_load_services": 0.0
+      }
+    },
+    {
+      "fork_name": "stress",
+      "scenario": "3x_volume",
+      "survived": false,
+      "metrics": {
+        "intensity": 3.0,
+        "max_utilization": 2.19640485,
+        "utilization_limit": 1.0,
+        "headroom": -1.19640485,
+        "util_payment_gateway": 0.8523349499999999,
+        "util_fraud_engine": 1.6729536374999998,
+        "util_risk_model": 2.19640485,
+        "util_ledger": 1.3451024249999999,
+        "util_settlement": 1.8194638799999998,
+        "util_notification": 0.60439398,
+        "util_reporting": 0.54949398,
+        "recent_transactions_in_window": 3.0,
+        "defaulted_load_services": 0.0
+      }
+    },
+    {
+      "fork_name": "normal",
+      "scenario": "fraud_spike",
+      "survived": true,
+      "metrics": {
+        "intensity": 1.0,
+        "max_utilization": 0.73213495,
+        "utilization_limit": 1.0,
+        "headroom": 0.26786505000000005,
+        "util_payment_gateway": 0.28411165,
+        "util_fraud_engine": 0.5576512124999999,
+        "util_risk_model": 0.73213495,
+        "util_ledger": 0.44836747499999996,
+        "util_settlement": 0.6064879599999999,
+        "util_notification": 0.20146466000000002,
+        "util_reporting": 0.18316466,
+        "recent_transactions_in_window": 3.0,
+        "defaulted_load_services": 0.0
+      }
+    },
+    {
+      "fork_name": "stress",
+      "scenario": "fraud_spike",
+      "survived": false,
+      "metrics": {
+        "intensity": 3.0,
+        "max_utilization": 2.19640485,
+        "utilization_limit": 1.0,
+        "headroom": -1.19640485,
+        "util_payment_gateway": 0.28411165,
+        "util_fraud_engine": 1.6729536374999998,
+        "util_risk_model": 2.19640485,
+        "util_ledger": 0.8967349499999999,
+        "util_settlement": 1.2129759199999999,
+        "util_notification": 0.40292932000000004,
+        "util_reporting": 0.18316466,
+        "recent_transactions_in_window": 3.0,
+        "defaulted_load_services": 0.0
+      }
+    },
+    {
+      "fork_name": "normal",
+      "scenario": "service_latency",
+      "survived": true,
+      "metrics": {
+        "intensity": 1.0,
+        "end_to_end_latency_ms": 691.1200229,
+        "latency_budget_ms": 1100.0,
+        "headroom": 408.8799771,
+        "max_utilization": 0.73213495,
+        "util_payment_gateway": 0.28411165,
+        "util_fraud_engine": 0.5576512124999999,
+        "util_risk_model": 0.73213495,
+        "util_ledger": 0.44836747499999996,
+        "util_settlement": 0.6064879599999999,
+        "util_notification": 0.20146466000000002,
+        "util_reporting": 0.18316466,
+        "recent_transactions_in_window": 3.0,
+        "defaulted_load_services": 0.0
+      }
+    },
+    {
+      "fork_name": "stress",
+      "scenario": "service_latency",
+      "survived": false,
+      "metrics": {
+        "intensity": 3.0,
+        "end_to_end_latency_ms": 1324.2428128000001,
+        "latency_budget_ms": 1100.0,
+        "headroom": -224.24281280000014,
+        "max_utilization": 0.73213495,
+        "util_payment_gateway": 0.28411165,
+        "util_fraud_engine": 0.5576512124999999,
+        "util_risk_model": 0.73213495,
+        "util_ledger": 0.44836747499999996,
+        "util_settlement": 0.6064879599999999,
+        "util_notification": 0.20146466000000002,
+        "util_reporting": 0.18316466,
+        "recent_transactions_in_window": 3.0,
+        "defaulted_load_services": 0.0
+      }
+    }
+  ],
+  "fragility": [
+    {
+      "scenario": "3x_volume",
+      "breaking_threshold": 1.4,
+      "unit": "x_intensity",
+      "resolution": 0.05
+    },
+    {
+      "scenario": "fraud_spike",
+      "breaking_threshold": 1.4,
+      "unit": "x_intensity",
+      "resolution": 0.05
+    },
+    {
+      "scenario": "service_latency",
+      "breaking_threshold": 2.3,
+      "unit": "x_intensity",
+      "resolution": 0.05
+    }
+  ],
+  "recommended_action": "BLOCK_OR_HOLD",
+  "evidence": [
+    "Impact Gate: score 0.719 >= threshold 0.60 (M=0.83, D=0.80, A=0.91, U=0.00; weights 0.30/0.30/0.25/0.15).",
+    "Pipeline time (gate, simulation, certificate): 1.9 ms.",
+    "Runtime: CPython 3.12.10 on Windows on AMD64; model backend numpy; git unavailable; config 0.1.0-prebuild; config_sha256 83b2a8f3669a; dataset_sha256 546f57ce9129; seed 42.",
+    "3x_volume at 3.0x: FAILED; peak utilization 0.73 nominal -> 2.20 stressed at risk_model (limit 1.00).",
+    "fraud_spike at 3.0x: FAILED; peak utilization 0.73 nominal -> 2.20 stressed at risk_model (limit 1.00).",
+    "service_latency at 3.0x: FAILED; end-to-end latency 691 ms nominal -> 1324 ms stressed (budget 1100 ms).",
+    "3x_volume: survives through 1.35x, fails by 1.40x (resolution 0.05x).",
+    "fraud_spike: survives through 1.35x, fails by 1.40x (resolution 0.05x).",
+    "service_latency: survives through 2.25x, fails by 2.30x (resolution 0.05x).",
+    "Local context: 3 other transaction(s) in the 60s window; 0 service(s) used the default background load.",
+    "Demo policy: BLOCK_OR_HOLD - stress failure in: 3x_volume, fraud_spike, service_latency.",
+    "LIMITATION: Synthetic data and a modelled enterprise: results describe the simulated system, not a real institution.",
+    "LIMITATION: Demo policy only: the recommended action is a deterministic prototype rule, not production authorization.",
+    "LIMITATION: Gate weights, threshold and failure limits are declared MVP parameters, not claimed optimal.",
+    "LIMITATION: Fragility is a bounded interval at the stated resolution, not an exact physical boundary."
+  ],
+  "runtime": {
+    "runtime": "CPython 3.12.10 on Windows",
+    "architecture": "AMD64",
+    "model_versions": {
+      "backend": "numpy",
+      "anomaly_model": "RobustMahalanobis [numpy-2.5.2]",
+      "risk_model": "BaggedLogisticRegression (std of member P(fail)) [numpy-2.5.2]",
+      "anomaly_normalization": "empirical_cdf_on_calibration_split",
+      "uncertainty_normalization": "std_across_members / 0.5, clipped to [0, 1]",
+      "fitted_on_split": "calibration",
+      "python": "3.12.10",
+      "numpy": "2.5.2",
+      "blackbox": "0.1.0-prebuild",
+      "config_sha256": "83b2a8f3669a48a81795ea4a7e29197a4d879d90500e4f54103b09a2df432a91",
+      "dataset_sha256": "546f57ce91292214e813e7fd7f7004c32188da54e8a952894076a0e5a8d2d5c3"
+    },
+    "random_seed": 42,
+    "git_revision": null
+  }
+}

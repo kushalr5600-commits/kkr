@@ -1,0 +1,385 @@
+PASS  tests.contract.test_schemas_and_interfaces::test_certificate_enums  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_frozen_interface_names_and_parameters  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_gate_formula_constants_are_frozen  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_node_type_vocabulary_matches_config  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_scenario_identifiers_are_exact  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_schema_model_names_and_fields_are_frozen  (0.00s)
+PASS  tests.contract.test_schemas_and_interfaces::test_transaction_validation_rejects_bad_input  (0.00s)
+PASS  tests.integration.test_dataset_studio::test_counterexample_tx_00108_b_independent_stress  (11.48s)
+PASS  tests.integration.test_dataset_studio::test_explain_api_has_contributions_and_threshold  (2.55s)
+PASS  tests.integration.test_dataset_studio::test_imbalanced_labels_metrics_are_honest  (2.45s)
+PASS  tests.integration.test_dataset_studio::test_registry_lists_metadata_without_bundling_bytes  (2.62s)
+PASS  tests.integration.test_dataset_studio::test_store_rejects_path_traversal_filename  (0.20s)
+PASS  tests.integration.test_dataset_studio::test_unmappable_dataset_evaluate_fails_with_422  (2.34s)
+PASS  tests.integration.test_dataset_studio::test_unsupported_and_oversized_and_empty_uploads  (2.63s)
+PASS  tests.integration.test_dataset_studio::test_upload_preview_map_evaluate_and_remove  (2.44s)
+PASS  tests.integration.test_full_pipeline::test_demo_mode_is_deterministic_and_uses_the_fixed_transaction  (4.53s)
+PASS  tests.integration.test_full_pipeline::test_full_pipeline_gate_selected_and_failing  (0.95s)
+PASS  tests.integration.test_full_pipeline::test_full_pipeline_low_impact_path_runs_no_simulation  (0.21s)
+PASS  tests.integration.test_full_pipeline::test_health_reports_the_real_architecture  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_http_routes_when_fastapi_is_available  (3.78s)
+PASS  tests.integration.test_full_pipeline::test_input_errors_run_no_business_logic  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_internal_gate_failure_degrades_to_review_not_to_safety  (0.01s)
+PASS  tests.integration.test_full_pipeline::test_internal_simulation_failure_degrades_to_review_and_keeps_the_score  (0.16s)
+PASS  tests.integration.test_full_pipeline::test_selected_and_surviving_transaction_is_allowed_with_margin  (0.15s)
+PASS  tests.integration.test_full_pipeline::test_showcase_covers_gate_outcomes_and_never_uses_the_test_split  (0.00s)
+PASS  tests.integration.test_full_pipeline::test_trace_and_stage_timing_diagnostics  (0.11s)
+PASS  tests.integration.test_http_api::test_http_analyze_demo_and_validation_errors  (3.53s)
+PASS  tests.integration.test_http_api::test_http_health_dashboard_and_static_assets  (2.66s)
+PASS  tests.integration.test_ui_api_contract::test_app_js_fetch_paths_match_backend_routes  (0.00s)
+PASS  tests.integration.test_ui_api_contract::test_counterexample_fields_used_by_ui  (3.24s)
+PASS  tests.integration.test_ui_api_contract::test_dataset_list_and_detail_fields_used_by_ui  (2.63s)
+PASS  tests.integration.test_ui_api_contract::test_experiments_fields_used_by_ui  (2.41s)
+PASS  tests.integration.test_ui_api_contract::test_explain_response_fields_used_by_ui  (2.74s)
+PASS  tests.integration.test_ui_api_contract::test_health_and_transactions_fields_used_by_ui  (3.43s)
+PASS  tests.integration.test_ui_api_contract::test_what_if_response_fields_used_by_ui  (2.71s)
+PASS  tests.integration.test_ui_behavioral_harness::test_app_js_syntax_check  (0.11s)
+PASS  tests.integration.test_ui_behavioral_harness::test_behavioral_dom_harness_all_flows  (0.42s)
+PASS  tests.unit.test_ai_intelligence::test_explain_signals_consistent_with_gate_score_for_showcase  (3.99s)
+PASS  tests.unit.test_ai_intelligence::test_explain_signals_exposes_real_anomaly_and_risk_outputs  (0.09s)
+PASS  tests.unit.test_ai_intelligence::test_http_challenge_lab_false_negative_analysis_present  (2.68s)
+PASS  tests.unit.test_ai_intelligence::test_http_explain_includes_ai_signals_and_what_if  (2.54s)
+PASS  tests.unit.test_ai_intelligence::test_what_if_isolated_and_rejects_bad_overrides  (0.13s)
+PASS  tests.unit.test_ai_intelligence::test_what_if_type_change_keeps_original_baseline_graph  (0.22s)
+PASS  tests.unit.test_certificate::test_evidence_values_come_from_the_inputs  (0.00s)
+PASS  tests.unit.test_certificate::test_inconsistent_inputs_are_rejected  (0.00s)
+PASS  tests.unit.test_certificate::test_limitations_are_always_present_and_marked  (0.00s)
+PASS  tests.unit.test_certificate::test_margin_exactly_at_review_margin_is_adequate  (0.00s)
+PASS  tests.unit.test_certificate::test_no_simulation_certificate  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_adequate_margin_allows_and_lower_bound_counts_as_adequate  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_any_stress_failure_blocks  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_low_impact_allows_normal_path  (0.00s)
+PASS  tests.unit.test_certificate::test_policy_thin_margin_reviews  (0.00s)
+PASS  tests.unit.test_certificate::test_review_certificate_never_claims_safety  (0.00s)
+PASS  tests.unit.test_certificate::test_simulated_certificate_with_failure_blocks_and_cites_metrics  (0.00s)
+wrote C:\Users\user\AppData\Local\Temp\opencode\blackbox_work\blackbox\schemas\decision_certificate.v1.schema.json
+PASS  tests.unit.test_certificate_schema_export::test_export_certificate_schema_matches_live_model  (0.03s)
+PASS  tests.unit.test_certificate_schema_export::test_otel_disabled_is_noop_and_does_not_require_package  (0.00s)
+PASS  tests.unit.test_certificate_schema_export::test_otel_enabled_without_package_still_noop  (0.01s)
+PASS  tests.unit.test_certificate_schema_export::test_policy_version_stable_and_frozen_weights  (0.00s)
+PASS  tests.unit.test_data::test_account_and_context_linkage  (1.00s)
+PASS  tests.unit.test_data::test_demo_pair_is_outside_the_evaluation_splits  (0.00s)
+PASS  tests.unit.test_data::test_exactly_five_joint_profiles_are_present  (0.00s)
+PASS  tests.unit.test_data::test_generation_is_deterministic_under_a_fixed_seed  (0.45s)
+PASS  tests.unit.test_data::test_graph_uses_only_frozen_node_types  (0.02s)
+PASS  tests.unit.test_data::test_ids_are_unique_and_all_categories_present  (0.01s)
+PASS  tests.unit.test_data::test_joint_cases_are_not_extreme_by_amount_alone  (0.00s)
+PASS  tests.unit.test_data::test_joint_pairs_keep_ground_truth_structure_and_60_second_cooccurrence  (0.05s)
+PASS  tests.unit.test_data::test_unknown_account_and_unsupported_type_are_input_errors  (0.00s)
+PASS  tests.unit.test_diagnostics_env::test_architecture_truth_rules_match_process_machine  (0.17s)
+PASS  tests.unit.test_diagnostics_env::test_certificate_runtime_evidence_line_is_truthful  (2.36s)
+PASS  tests.unit.test_diagnostics_env::test_collect_returns_required_sections  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_config_fingerprint_exposes_frozen_threshold  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_dataset_fingerprint_reports_manifest_match  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_does_not_claim_linuxone_from_config_mentions_alone  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_model_backend_selection_is_reported  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_pointer_bits_matches_struct  (0.00s)
+PASS  tests.unit.test_diagnostics_env::test_report_is_json_serializable  (0.01s)
+PASS  tests.unit.test_diagnostics_env::test_validation_report_evidence_bundle_write  (0.01s)
+PASS  tests.unit.test_frontend_contract::test_api_demo_no_simulation_is_honest_and_empty  (0.06s)
+PASS  tests.unit.test_frontend_contract::test_api_simulated_example_has_paired_forks_and_scenarios  (0.11s)
+PASS  tests.unit.test_frontend_contract::test_api_unknown_type_and_account_return_input_errors  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_action_and_status_classes_match_certificate_literals  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_brand_logo_and_slogan_assets  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_exists_and_is_presentation_only  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_navigation_and_design_tokens  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_renders_certificate_fields_and_honest_no_simulation_notice  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_frontend_skips_incomplete_fork_pairs  (0.00s)
+PASS  tests.unit.test_frontend_contract::test_what_if_button_bound_to_selected_transaction  (0.00s)
+PASS  tests.unit.test_gate::test_all_signals_and_scores_are_normalized_to_unit_interval  (0.97s)
+PASS  tests.unit.test_gate::test_anomaly_signal_is_higher_for_failures_than_for_ordinary_transactions  (1.35s)
+PASS  tests.unit.test_gate::test_exact_weighted_equation  (0.00s)
+PASS  tests.unit.test_gate::test_fitting_on_any_split_but_calibration_is_refused  (0.00s)
+PASS  tests.unit.test_gate::test_magnitude_is_monotone_and_zero_below_baseline  (0.00s)
+PASS  tests.unit.test_gate::test_models_were_fitted_on_the_calibration_split_only  (0.00s)
+PASS  tests.unit.test_gate::test_numpy_fallback_backend_produces_valid_scores  (2.32s)
+PASS  tests.unit.test_gate::test_same_input_and_seed_give_the_same_score  (5.44s)
+PASS  tests.unit.test_gate::test_threshold_routing_boundary_is_0_60_inclusive  (1.53s)
+PASS  tests.unit.test_gate::test_uncertainty_is_a_real_ensemble_disagreement_and_reproducible  (0.31s)
+PASS  tests.unit.test_packaging_numpy_runtime::test_numpy_backend_selects_without_sklearn_import  (0.00s)
+PASS  tests.unit.test_packaging_numpy_runtime::test_requirements_numpy_declares_runtime_deps_only  (0.00s)
+PASS  tests.unit.test_packaging_numpy_runtime::test_runtime_modules_import_with_stdlib_plus_numpy_stack  (0.00s)
+PASS  tests.unit.test_packaging_numpy_runtime::test_smoke_without_httpx_skips_http_not_fail  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_budget_count_is_ceil_and_capped  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_interaction_score_does_not_read_failure_labels  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_interaction_score_in_unit_interval_and_deterministic  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_methodology_flags_test_split_unused  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_rank_policies_same_k_for_all_deterministic_policies  (0.01s)
+PASS  tests.unit.test_phase2_diagnostics::test_top_k_mask_selects_highest_scores  (0.00s)
+PASS  tests.unit.test_phase2_diagnostics::test_validation_anomaly_raw_and_cdf_A_share_topk  (4.83s)
+PASS  tests.unit.test_phase2_diagnostics::test_window_pressure_feature_build_without_labels  (3.78s)
+PASS  tests.unit.test_phase3_ranking::test_bootstrap_diff_zero_when_masks_equal  (0.01s)
+PASS  tests.unit.test_phase3_ranking::test_bootstrap_respects_cluster_structure  (0.01s)
+PASS  tests.unit.test_phase3_ranking::test_budget_count_ceil_and_bounds  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_csv_roundtrip_and_recalc  (0.01s)
+PASS  tests.unit.test_phase3_ranking::test_interaction_formula_convex_combination_in_unit_interval  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_interaction_score_label_independent  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_monotonic_shift_preserves_ranking  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_ranking_deterministic_across_calls  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_recalc_metrics_hand_computed  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_stable_topk_matches_numpy_stable_argsort  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_tie_break_prefers_lower_original_index  (0.00s)
+PASS  tests.unit.test_phase3_ranking::test_topk_selects_exactly_k  (0.00s)
+PASS  tests.unit.test_simulation::test_attack_returns_one_normal_and_one_stress_result  (0.00s)
+PASS  tests.unit.test_simulation::test_failure_predicates_are_monotone_in_intensity  (0.69s)
+PASS  tests.unit.test_simulation::test_failure_reasons_are_metrics_not_labels  (0.00s)
+PASS  tests.unit.test_simulation::test_fork_isolation_state_is_never_stressed_twice  (0.00s)
+PASS  tests.unit.test_simulation::test_fragility_edge_cases  (0.00s)
+PASS  tests.unit.test_simulation::test_fragility_interval_is_one_resolution_wide_and_honest  (0.11s)
+PASS  tests.unit.test_simulation::test_normal_and_stress_outcomes_are_distinct_under_load  (0.00s)
+PASS  tests.unit.test_simulation::test_three_scenarios_behave_differently  (0.00s)
+PASS  tests.unit.test_simulation::test_unknown_scenario_and_foreign_baseline_are_rejected  (0.00s)
+
+130 passed, 0 failed in 98.5s
+
+C:\Users\user\AppData\Local\Programs\Python\Python312\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-6ebd9c74b82d", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.175, "stage": "context_loaded", "status": "ok", "trace_id": "TR-6ebd9c74b82d", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 63.299, "stage": "gate_scored", "status": "ok", "trace_id": "TR-6ebd9c74b82d", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.115, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-6ebd9c74b82d", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 63.985, "stage": "response_sent", "status": "ok", "trace_id": "TR-6ebd9c74b82d", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-3ea6cc5b9bee", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.167, "stage": "context_loaded", "status": "ok", "trace_id": "TR-3ea6cc5b9bee", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 44.224, "stage": "gate_scored", "status": "ok", "trace_id": "TR-3ea6cc5b9bee", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.109, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-3ea6cc5b9bee", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 45.714, "stage": "response_sent", "status": "ok", "trace_id": "TR-3ea6cc5b9bee", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-4fef83056bd4", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.203, "stage": "context_loaded", "status": "ok", "trace_id": "TR-4fef83056bd4", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 51.409, "stage": "gate_scored", "status": "ok", "trace_id": "TR-4fef83056bd4", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.095, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-4fef83056bd4", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 51.899, "stage": "response_sent", "status": "ok", "trace_id": "TR-4fef83056bd4", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-8b09f372faac", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.209, "stage": "context_loaded", "status": "ok", "trace_id": "TR-8b09f372faac", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 45.651, "stage": "gate_scored", "status": "ok", "trace_id": "TR-8b09f372faac", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.092, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-8b09f372faac", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 46.136, "stage": "response_sent", "status": "ok", "trace_id": "TR-8b09f372faac", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.262, "stage": "context_loaded", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 44.597, "stage": "gate_scored", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.067, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.054, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.041, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.29, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.185, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 47.684, "stage": "response_sent", "status": "ok", "trace_id": "TR-8222e34b67bd", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.216, "stage": "context_loaded", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 48.307, "stage": "gate_scored", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.034, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.026, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.191, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.196, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 50.054, "stage": "response_sent", "status": "ok", "trace_id": "TR-c08e35d02f96", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.306, "stage": "context_loaded", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 48.004, "stage": "gate_scored", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.035, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.031, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.036, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.187, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.118, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 49.131, "stage": "response_sent", "status": "ok", "trace_id": "TR-cfa47e7ac07e", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.163, "stage": "context_loaded", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 45.17, "stage": "gate_scored", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.62, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.064, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.112, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.373, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.169, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 48.543, "stage": "response_sent", "status": "ok", "trace_id": "TR-8f18b68c918b", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-e53099c34d61", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.12, "stage": "context_loaded", "status": "ok", "trace_id": "TR-e53099c34d61", "transaction_id": "TX-00001"}
+{"elapsed_ms": 44.709, "stage": "gate_scored", "status": "ok", "trace_id": "TR-e53099c34d61", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.085, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-e53099c34d61", "transaction_id": "TX-00001"}
+{"elapsed_ms": 45.183, "stage": "response_sent", "status": "ok", "trace_id": "TR-e53099c34d61", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-fe8daed08566", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.162, "stage": "context_loaded", "status": "ok", "trace_id": "TR-fe8daed08566", "transaction_id": "TX-00001"}
+{"elapsed_ms": 51.993, "stage": "gate_scored", "status": "ok", "trace_id": "TR-fe8daed08566", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.098, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-fe8daed08566", "transaction_id": "TX-00001"}
+{"elapsed_ms": 52.488, "stage": "response_sent", "status": "ok", "trace_id": "TR-fe8daed08566", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-0edfed89d58e", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.173, "stage": "context_loaded", "status": "ok", "trace_id": "TR-0edfed89d58e", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 60.046, "stage": "gate_scored", "status": "ok", "trace_id": "TR-0edfed89d58e", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.083, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-0edfed89d58e", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 61.906, "stage": "response_sent", "status": "ok", "trace_id": "TR-0edfed89d58e", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-cb0ffaf9d02c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.018, "error_code": "E001", "error_message": "unknown account_id 'ACC-NOPE'", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-cb0ffaf9d02c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-5acb7d34f7b7", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.016, "error_code": "E001", "error_message": "unsupported transaction_type 'crypto_swap'; supported: card_payment, wire_transfer, ach_batch, refund, internal_transfer", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-5acb7d34f7b7", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-1b4ba72c98bc", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.205, "stage": "context_loaded", "status": "ok", "trace_id": "TR-1b4ba72c98bc", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.02, "error_code": null, "error_message": "model exploded", "error_type": "RuntimeError", "owner": "unknown", "recovery_action": "reproduce with the demo transaction; inspect first failing stage", "stage": "gate_scored", "status": "error", "trace_id": "TR-1b4ba72c98bc", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.54, "stage": "response_sent", "status": "ok", "trace_id": "TR-1b4ba72c98bc", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.414, "stage": "context_loaded", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 46.704, "stage": "gate_scored", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.037, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.194, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.116, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 47.878, "stage": "response_sent", "status": "ok", "trace_id": "TR-5098b724aebf", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.161, "stage": "context_loaded", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 46.951, "stage": "gate_scored", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.059, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.06, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.043, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.229, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.131, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 48.349, "stage": "response_sent", "status": "ok", "trace_id": "TR-ef9085e059ed", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-5d6e737b9859", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.175, "stage": "context_loaded", "status": "ok", "trace_id": "TR-5d6e737b9859", "transaction_id": "TX-00008"}
+{"elapsed_ms": 47.976, "stage": "gate_scored", "status": "ok", "trace_id": "TR-5d6e737b9859", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-5d6e737b9859", "transaction_id": "TX-00008"}
+{"elapsed_ms": 48.384, "stage": "response_sent", "status": "ok", "trace_id": "TR-5d6e737b9859", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-213816c8687c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.239, "stage": "context_loaded", "status": "ok", "trace_id": "TR-213816c8687c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 43.158, "stage": "gate_scored", "status": "ok", "trace_id": "TR-213816c8687c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.076, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-213816c8687c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 43.506, "stage": "response_sent", "status": "ok", "trace_id": "TR-213816c8687c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.212, "stage": "context_loaded", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 43.308, "stage": "gate_scored", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.035, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.028, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.185, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.219, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 45.328, "stage": "response_sent", "status": "ok", "trace_id": "TR-20bc2a5327ad", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.295, "stage": "context_loaded", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 47.894, "stage": "gate_scored", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.04, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.036, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.034, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.235, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.129, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 49.115, "stage": "response_sent", "status": "ok", "trace_id": "TR-c95b317f9f9c", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.288, "stage": "context_loaded", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 48.364, "stage": "gate_scored", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.035, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.027, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.026, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.229, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.115, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 49.568, "stage": "response_sent", "status": "ok", "trace_id": "TR-bef53781e79a", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 1.119, "stage": "context_loaded", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 46.586, "stage": "gate_scored", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.04, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.038, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.03, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.187, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.126, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 47.841, "stage": "response_sent", "status": "ok", "trace_id": "TR-76967f38e5c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-b472d5eaaa55", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.162, "stage": "context_loaded", "status": "ok", "trace_id": "TR-b472d5eaaa55", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 45.251, "stage": "gate_scored", "status": "ok", "trace_id": "TR-b472d5eaaa55", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.072, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-b472d5eaaa55", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 45.649, "stage": "response_sent", "status": "ok", "trace_id": "TR-b472d5eaaa55", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.26, "stage": "context_loaded", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 48.294, "stage": "gate_scored", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.066, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.05, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.05, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.339, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.15, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 50.063, "stage": "response_sent", "status": "ok", "trace_id": "TR-354727ad4afc", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-913ce256a84d", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.031, "error_code": "E001", "error_message": "unsupported transaction_type 'crypto_swap'; supported: card_payment, wire_transfer, ach_batch, refund, internal_transfer", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-913ce256a84d", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-9addc63a6ab1", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.16, "stage": "context_loaded", "status": "ok", "trace_id": "TR-9addc63a6ab1", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 43.559, "stage": "gate_scored", "status": "ok", "trace_id": "TR-9addc63a6ab1", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.068, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-9addc63a6ab1", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 43.896, "stage": "response_sent", "status": "ok", "trace_id": "TR-9addc63a6ab1", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-6b1440bc0086", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.124, "stage": "context_loaded", "status": "ok", "trace_id": "TR-6b1440bc0086", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 60.357, "stage": "gate_scored", "status": "ok", "trace_id": "TR-6b1440bc0086", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.072, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-6b1440bc0086", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 60.726, "stage": "response_sent", "status": "ok", "trace_id": "TR-6b1440bc0086", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-2c5cf1fac7a9", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.307, "stage": "context_loaded", "status": "ok", "trace_id": "TR-2c5cf1fac7a9", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 59.549, "stage": "gate_scored", "status": "ok", "trace_id": "TR-2c5cf1fac7a9", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.106, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-2c5cf1fac7a9", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 59.972, "stage": "response_sent", "status": "ok", "trace_id": "TR-2c5cf1fac7a9", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-83e966eb9d2c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 1.153, "stage": "context_loaded", "status": "ok", "trace_id": "TR-83e966eb9d2c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 43.199, "stage": "gate_scored", "status": "ok", "trace_id": "TR-83e966eb9d2c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.066, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-83e966eb9d2c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 43.598, "stage": "response_sent", "status": "ok", "trace_id": "TR-83e966eb9d2c", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.247, "stage": "context_loaded", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 46.053, "stage": "gate_scored", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.045, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.044, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.037, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.241, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.137, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 47.455, "stage": "response_sent", "status": "ok", "trace_id": "TR-dea6a132b3c7", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.216, "stage": "context_loaded", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 49.14, "stage": "gate_scored", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.047, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.039, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.036, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.274, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.141, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 50.494, "stage": "response_sent", "status": "ok", "trace_id": "TR-9db97f722639", "transaction_id": "TX-00008"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-e6317c01c5aa", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.103, "stage": "context_loaded", "status": "ok", "trace_id": "TR-e6317c01c5aa", "transaction_id": "TX-00001"}
+{"elapsed_ms": 44.218, "stage": "gate_scored", "status": "ok", "trace_id": "TR-e6317c01c5aa", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.074, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-e6317c01c5aa", "transaction_id": "TX-00001"}
+{"elapsed_ms": 44.797, "stage": "response_sent", "status": "ok", "trace_id": "TR-e6317c01c5aa", "transaction_id": "TX-00001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-cf0f8e0dcb11", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.259, "stage": "context_loaded", "status": "ok", "trace_id": "TR-cf0f8e0dcb11", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 67.426, "stage": "gate_scored", "status": "ok", "trace_id": "TR-cf0f8e0dcb11", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.089, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-cf0f8e0dcb11", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 67.905, "stage": "response_sent", "status": "ok", "trace_id": "TR-cf0f8e0dcb11", "transaction_id": "TX-00108-B"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-b6236bf9c610", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.17, "stage": "context_loaded", "status": "ok", "trace_id": "TR-b6236bf9c610", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 44.387, "stage": "gate_scored", "status": "ok", "trace_id": "TR-b6236bf9c610", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.069, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-b6236bf9c610", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 44.737, "stage": "response_sent", "status": "ok", "trace_id": "TR-b6236bf9c610", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-d4a05ced259a", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.18, "stage": "context_loaded", "status": "ok", "trace_id": "TR-d4a05ced259a", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 54.78, "stage": "gate_scored", "status": "ok", "trace_id": "TR-d4a05ced259a", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.071, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-d4a05ced259a", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 55.171, "stage": "response_sent", "status": "ok", "trace_id": "TR-d4a05ced259a", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-1f9e83f7d271", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.148, "stage": "context_loaded", "status": "ok", "trace_id": "TR-1f9e83f7d271", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 53.564, "stage": "gate_scored", "status": "ok", "trace_id": "TR-1f9e83f7d271", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.109, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-1f9e83f7d271", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 54.391, "stage": "response_sent", "status": "ok", "trace_id": "TR-1f9e83f7d271", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.288, "stage": "context_loaded", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 47.904, "stage": "gate_scored", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "simulation_started", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.036, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.037, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.031, "stage": "scenario_completed", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.187, "stage": "fragility_completed", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.124, "stage": "certificate_generated", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 49.111, "stage": "response_sent", "status": "ok", "trace_id": "TR-49b4188eb3c5", "transaction_id": "TX-00154"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-5264a8762ee1", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.017, "error_code": "E001", "error_message": "unsupported transaction_type 'crypto_swap'; supported: card_payment, wire_transfer, ach_batch, refund, internal_transfer", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-5264a8762ee1", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.0, "stage": "request_received", "status": "ok", "trace_id": "TR-9939847edd1b", "transaction_id": "TX-DEMO-0001"}
+{"elapsed_ms": 0.009, "error_code": "E001", "error_message": "unknown account_id 'ACC-NOPE'", "error_type": "InputError", "owner": "boundary owner", "recovery_action": "return an HTTP validation error; do not run business logic", "stage": "context_loaded", "status": "error", "trace_id": "TR-9939847edd1b", "transaction_id": "TX-DEMO-0001"}
