@@ -1,7 +1,7 @@
 # LinuxONE / s390x Validation Report
 
-**Date:** 2026-10-16 · **Target:** IBM Z Datathon Community Cloud, s390x guest
-**Status:** **LINUXONE_PASS** — `overall_status: PASS`, `runtime_label: linuxone`
+**Date:** 2026-10-16 Â· **Target:** IBM Z Datathon Community Cloud, s390x guest
+**Status:** **LINUXONE_PASS** â€” `overall_status: PASS`, `runtime_label: linuxone`
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Field | Value |
 |---|---|
-| IP | 148.100.78.185 |
+| IP | <redacted-linuxone-guest> |
 | SSH user | linux1 |
 | Image | Ubuntu24.04-Datathon |
 | OS | Ubuntu 24.04.5 LTS |
@@ -32,15 +32,15 @@
 
 | Step | Command | Result |
 |---|---|---|
-| Environment diagnostics | `diagnose_env.py` | PASS — `runtime_label=linuxone`, `process_is_s390x=true` |
-| Dataset integrity | SHA-256 vs manifest | PASS — `546f57ce…d5c3` matches |
-| Test suite | `scripts/run_tests.py` | PASS — **133 passed, 0 failed** (24.4s) |
-| Pytest | `python -m pytest -q` | PASS — 133 passed, 1 warning (25.3s) |
-| Smoke test | `scripts/smoke_test.py` | PASS — all checks including HTTP |
-| Live HTTP | uvicorn + `/health` + `/analyze` | PASS — `runtime:linuxone`, `architecture:s390x` |
-| Schema export | `export_certificate_schema.py` | PASS — exit 0 |
-| Gate trace | `trace_gate.py` | PASS — score 0.413874, matches numpy baseline |
-| One-shot runner | `validate_runtime.py --include-optional` | **PASS** — `overall_status: PASS` |
+| Environment diagnostics | `diagnose_env.py` | PASS â€” `runtime_label=linuxone`, `process_is_s390x=true` |
+| Dataset integrity | SHA-256 vs manifest | PASS â€” `546f57ceâ€¦d5c3` matches |
+| Test suite | `scripts/run_tests.py` | PASS â€” **133 passed, 0 failed** (24.4s) |
+| Pytest | `python -m pytest -q` | PASS â€” 133 passed, 1 warning (25.3s) |
+| Smoke test | `scripts/smoke_test.py` | PASS â€” all checks including HTTP |
+| Live HTTP | uvicorn + `/health` + `/analyze` | PASS â€” `runtime:linuxone`, `architecture:s390x` |
+| Schema export | `export_certificate_schema.py` | PASS â€” exit 0 |
+| Gate trace | `trace_gate.py` | PASS â€” score 0.413874, matches numpy baseline |
+| One-shot runner | `validate_runtime.py --include-optional` | **PASS** â€” `overall_status: PASS` |
 
 ## 4. Key `/health` response (s390x)
 
@@ -91,22 +91,22 @@ System packages: `python3.12-venv`, `build-essential`, `python3.12-dev`, `nodejs
 |---|---|---|
 | F-006 | P3 | `requirements-numpy.txt` missing `python-multipart` (FastAPI form/file upload). Installed manually. |
 | F-007 | P3 | `test_certificate_reproducibility.py` `_SHOWCASE_IDS` included `TX-00154` (sklearn-only) but not `TX-00300` (numpy-only). Fixed: added `TX-00300`. |
-| F-008 | P3 | Runbook §4a assumes `python3-venv` preinstalled; Ubuntu 24.04 requires `apt install python3.12-venv` first. Also needs `build-essential` + `python3.12-dev` for numpy source build. |
-| F-009 | P3 | Runbook §2 uses `git clone`; working tree has no `.git`. Code transferred via tar.gz archive. |
+| F-008 | P3 | Runbook Â§4a assumes `python3-venv` preinstalled; Ubuntu 24.04 requires `apt install python3.12-venv` first. Also needs `build-essential` + `python3.12-dev` for numpy source build. |
+| F-009 | P3 | Runbook Â§2 uses `git clone`; working tree has no `.git`. Code transferred via tar.gz archive. |
 
 ## 8. Integrity
 
-- Frozen Phase 2 `results.json` SHA-256: `3e26d127…2ff52` — **unchanged**
-- Weights: `{magnitude:0.30, dependency:0.30, anomaly:0.25, uncertainty:0.15}` — **unchanged**
-- Threshold: `0.60` — **unchanged**
-- Dataset SHA-256: `546f57ce…d5c3` — **matches manifest**
-- `POLICY_VERSION`: `1.0.0` — **unchanged**
+- Frozen Phase 2 `results.json` SHA-256: `3e26d127â€¦2ff52` â€” **unchanged**
+- Weights: `{magnitude:0.30, dependency:0.30, anomaly:0.25, uncertainty:0.15}` â€” **unchanged**
+- Threshold: `0.60` â€” **unchanged**
+- Dataset SHA-256: `546f57ceâ€¦d5c3` â€” **matches manifest**
+- `POLICY_VERSION`: `1.0.0` â€” **unchanged**
 
 ## 9. Not tested / open items
 
 | Item | Status |
 |---|---|
-| scikit-learn backend on s390x | NOT TESTED (numpy path used per runbook §6b) |
+| scikit-learn backend on s390x | NOT TESTED (numpy path used per runbook Â§6b) |
 | T1 gate-weight decision | OPEN (human owner) |
 | Locked test split | UNUSED (by design) |
 | Browser interactive click-through | NOT VERIFIED (human-only) |
@@ -118,10 +118,10 @@ System packages: `python3.12-venv`, `build-essential`, `python3.12-dev`, `nodejs
 
 ---
 
-# Update 2026-10-16 (post-activation, scikit-learn) �?" LINUXONE_PASS
+# Update 2026-10-16 (post-activation, scikit-learn) ï¿½?" LINUXONE_PASS
 
 The interaction-aware gate was activated later on 2026-10-16 under explicit human
-authorization (`docs/submission/DISCLOSURES.md` §2). The target was revalidated
+authorization (`docs/submission/DISCLOSURES.md` Â§2). The target was revalidated
 with the updated tree and the scikit-learn backend built on the guest.
 
 ## Run summary
@@ -134,22 +134,22 @@ with the updated tree and the scikit-learn backend built on the guest.
 | `model_backend` | **sklearn** (IsolationForest A, RandomForest-disagreement U; guest-built 1.9.1) |
 | Full suite | **141 passed, 0 failed** (`scripts/run_tests.py`, 26.9s) |
 | pytest + smoke + live HTTP | **PASS** (demo `NO_SIMULATION` through real uvicorn HTTP) |
-| Dataset SHA-256 | matches frozen `546f57ce…d5c3` |
+| Dataset SHA-256 | matches frozen `546f57ceâ€¦d5c3` |
 | Showcase scores | **identical to AMD64/sklearn**: TX-DEMO-0001 `0.516452` NO_SIMULATION; TX-00154 `0.661589` SIMULATED/BLOCK (fails stress); TX-01623 `0.600031` SIMULATED/REVIEW (survives); TX-00001 `0.232720` skipped; TX-00108-B `0.457158` skipped (missed failure) |
 | Certificate `policy_formula` | `I=0.45*A+0.30*W+0.15*D+0.10*L;threshold=0.60;mode=interaction_aware` |
 
 ## Cross-arch claim
 
 Interaction-aware gate scores are **reproducible between AMD64 and s390x**
-(same sklearn 1.9.1, same dataset SHA, same seeds). This supersedes §9's
+(same sklearn 1.9.1, same dataset SHA, same seeds). This supersedes Â§9's
 "scikit-learn backend on s390x NOT TESTED" row.
 
 ## Remaining open (unchanged)
 
-Browser interactive click-through (human-only) �?" Docker BLOCKED (CLI) �?"
-locked test split UNUSED (by design) �?" organizer compliance still HUMAN REQUIRED.
+Browser interactive click-through (human-only) ï¿½?" Docker BLOCKED (CLI) ï¿½?"
+locked test split UNUSED (by design) ï¿½?" organizer compliance still HUMAN REQUIRED.
 
-# Update 2026-10-17 (hybrid + LLM + container) � partial: suite VERIFIED, container REBUILD pending
+# Update 2026-10-17 (hybrid + LLM + container) — partial: suite VERIFIED, container REBUILD pending
 
 ## Run summary
 - **Suite on target:** `scripts/run_tests.py` and `python -m pytest tests -q`
@@ -168,7 +168,7 @@ locked test split UNUSED (by design) �?" organizer compliance still HUMAN REQU
 - **Container:** first s390x image build **SUCCEEDED** (Docker 29.8.0,
   `BASE_IMAGE=s390x/python:3.11-bookworm`, `INSTALL_BUILD_TOOLS=1`;
   image `blackbox:latest`, 2.04 GB). Container **exited(1)** on startup:
-  `RuntimeError: Form data requires "python-multipart"` � pre-existing
+  `RuntimeError: Form data requires "python-multipart"` — pre-existing
   omission from `requirements.txt` (same class as F-006 for the numpy file).
   Fix added; rebuild launched (`~/docker_build3.log`). Container `/health`
   verification will be appended when the rebuild finishes.
@@ -185,7 +185,7 @@ output (see disclosure D-5 in `docs/DEBUG_LOG.md`).
 - `validate_runtime.py --include-optional` re-run on the target with the
   final tree (planned after container green).
 
-# Update 2026-10-17b (container + LLM live) � LINUXONE_PASS_FULL_STACK
+# Update 2026-10-17b (container + LLM live) — LINUXONE_PASS_FULL_STACK
 
 ## Container (rubric: demonstrate containerized deployment)
 - Rebuilt image after adding `python-multipart` to `requirements.txt`

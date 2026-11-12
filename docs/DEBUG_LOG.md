@@ -1,4 +1,4 @@
-﻿# DEBUG LOG (append only)
+# DEBUG LOG (append only)
 
 ## 2026-10-16 LinuxONE / s390x validation â€” VERIFIED (OpenCode)
 
@@ -7,7 +7,7 @@ ROLE / TASK:        Authorized Oct 16 target session. Provisioned s390x guest
                     installed deps, ran full validation suite.
 STATUS:             LINUXONE_PASS â€” overall_status=PASS, runtime_label=linuxone,
                     architecture=s390x, model_backend=numpy, 133/133 tests.
-TARGET:             148.100.78.185, user linux1, Ubuntu 24.04.5 LTS, Python 3.12.3,
+TARGET:             <redacted-linuxone-guest>, user linux1, Ubuntu 24.04.5 LTS, Python 3.12.3,
                     3 vCPU / 8 GB RAM / 50 GB disk.
 EVIDENCE:           evidence/results/validation_runs/run_20261016T113630Z_s390x_numpy/
                     (validation_report.json + README.md)

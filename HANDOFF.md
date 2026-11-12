@@ -1,4 +1,4 @@
-﻿# HANDOFF.md â€” session-start context for opencode on the laptop (2026-10-17)
+# HANDOFF.md â€” session-start context for opencode on the laptop (2026-10-17)
 
 **Read this file FIRST**, then `docs/STATUS.md`, then the last entries of
 `docs/DEBUG_LOG.md`. `AGENTS.md` sections 2â€“3 are **stale** (still say "67 tests" /
@@ -54,7 +54,7 @@ package a submission bundle, re-verify on a new machine.
 
 ## 5. LinuxONE guest (only if remote work is needed)
 
-- `linux1@148.100.78.185`, key `blackbox.pem` (**key intentionally NOT in this zip** â€”
+- `<redacted-linuxone-guest>`, key `blackbox.pem` (**key intentionally NOT in this zip** â€”
   user must supply/rotate; never commit keys). Code lived at `~/blackbox` (final-synced).
 - Guest extras not in this zip (rebuildable): `.venv`, Granite model cache
   `~/shared/hf_cache` (~1 GB), running containers (`blackbox`, `granite-svc`, `notebook`).
